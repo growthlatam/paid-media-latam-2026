@@ -1,0 +1,39 @@
+/* Thomson Reuters brand tokens — portable, local font paths */
+
+@font-face { font-family: "Clario"; font-style: normal; font-weight: 300; font-display: swap; src: url("fonts/Clario-Light.woff2") format("woff2"); }
+@font-face { font-family: "Clario"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/Clario-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Clario"; font-style: italic; font-weight: 400; font-display: swap; src: url("fonts/Clario-RegularItalic.woff2") format("woff2"); }
+@font-face { font-family: "Clario"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/Clario-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Clario"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/Clario-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Clario"; font-style: normal; font-weight: 900; font-display: swap; src: url("fonts/Clario-Black.woff2") format("woff2"); }
+
+:root {
+  --tr-orange: #D64000;
+  --tr-racing-green: #123015;
+  --tr-graphite: #212223;
+  --tr-white: #FFFFFF;
+  --tr-light-gray: #E3E3E3;
+  --tr-dark-gray: #404040;
+  --tr-soft-gray: #F4F4F4;
+  --tr-light-gold: #FCF2DA;
+  --tr-dark-gold: #E9B045;
+  --tr-font: "Clario", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --tr-space-1: 4px;  --tr-space-2: 8px;  --tr-space-3: 16px;
+  --tr-space-4: 24px; --tr-space-5: 32px; --tr-space-6: 48px;
+  --tr-space-7: 64px; --tr-space-8: 96px; --tr-space-9: 128px;
+  --tr-page-max: 1200px;
+  --tr-radius: 8px;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--tr-font);
+  color: var(--tr-graphite);
+  background: var(--tr-white);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+img, svg { display: block; max-width: 100%; }

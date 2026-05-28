@@ -1,0 +1,370 @@
+/*
+ * Thomson Reuters brand tokens
+ * Single source of truth for color, typography, and brand utility classes.
+ * Link this stylesheet at the top of every TR-branded HTML artifact.
+ */
+
+/* ------------------------------------------------------------------ */
+/* Fonts                                                              */
+/* ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Clario";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Air.woff2") format("woff2"),
+       url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Air.woff") format("woff");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-AirItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-ThinItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-LightItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Regular.woff2") format("woff2"),
+       url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-RegularItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-MediumItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-BoldItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Clario";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("file:///Users/ivanbragatto/Documents/TR%20CLAUDE%20PROJECTS/brand/assets/font/Web/Clario-BlackItalic.woff2") format("woff2");
+}
+
+/* ------------------------------------------------------------------ */
+/* Custom properties                                                  */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* Primary palette */
+  --tr-orange: #D64000;
+  --tr-racing-green: #123015;
+  --tr-graphite: #212223;
+  --tr-white: #FFFFFF;
+
+  /* Neutrals */
+  --tr-light-gray: #E3E3E3;
+  --tr-dark-gray: #404040;
+
+  /* Secondary pairs */
+  --tr-light-gold: #FCF2DA;
+  --tr-dark-gold: #E9B045;
+  --tr-light-amber: #F8EADD;
+  --tr-dark-amber: #D4792A;
+  --tr-light-sky: #E3F1FD;
+  --tr-dark-sky: #0874E3;
+  --tr-light-teal: #E3F3EE;
+  --tr-dark-teal: #4DB299;
+  --tr-light-lime: #E1F4CD;
+  --tr-dark-lime: #8FCB64;
+
+  /* Type stack */
+  --tr-font: "Clario", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Spacing scale (multiples of 8px) */
+  --tr-space-1: 4px;
+  --tr-space-2: 8px;
+  --tr-space-3: 16px;
+  --tr-space-4: 24px;
+  --tr-space-5: 32px;
+  --tr-space-6: 48px;
+  --tr-space-7: 64px;
+  --tr-space-8: 96px;
+  --tr-space-9: 128px;
+
+  /* Layout */
+  --tr-page-max: 1200px;
+  --tr-radius: 8px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                               */
+/* ------------------------------------------------------------------ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--tr-font);
+  color: var(--tr-graphite);
+  background: var(--tr-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--tr-orange);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--tr-racing-green); }
+
+img, svg { display: block; max-width: 100%; }
+
+/* ------------------------------------------------------------------ */
+/* Layout primitives                                                  */
+/* ------------------------------------------------------------------ */
+
+.tr-page {
+  max-width: var(--tr-page-max);
+  margin: 0 auto;
+  padding: 0 var(--tr-space-5);
+}
+
+.tr-hero {
+  padding: var(--tr-space-8) 0 var(--tr-space-7);
+}
+
+.tr-section {
+  padding: var(--tr-space-7) 0;
+}
+
+.tr-section--green {
+  background: var(--tr-racing-green);
+  color: var(--tr-white);
+}
+.tr-section--green .tr-h1,
+.tr-section--green .tr-h2,
+.tr-section--green .tr-h3,
+.tr-section--green .tr-body { color: var(--tr-white); }
+.tr-section--green .tr-eyebrow { color: var(--tr-white); opacity: 0.85; }
+
+.tr-section--gray { background: var(--tr-light-gray); }
+.tr-section--orange { background: var(--tr-orange); color: var(--tr-white); }
+.tr-section--orange .tr-h1,
+.tr-section--orange .tr-h2,
+.tr-section--orange .tr-h3,
+.tr-section--orange .tr-body { color: var(--tr-white); }
+
+.tr-grid-2,
+.tr-grid-3,
+.tr-grid-4 {
+  display: grid;
+  gap: var(--tr-space-5);
+}
+.tr-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.tr-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.tr-grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 768px) {
+  .tr-grid-2, .tr-grid-3, .tr-grid-4 { grid-template-columns: 1fr; }
+}
+
+.tr-card {
+  background: var(--tr-light-gray);
+  border-radius: var(--tr-radius);
+  padding: var(--tr-space-5);
+}
+
+/* ------------------------------------------------------------------ */
+/* Type styles                                                        */
+/* ------------------------------------------------------------------ */
+
+.tr-eyebrow {
+  font-family: var(--tr-font);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--tr-orange);
+  margin: 0 0 var(--tr-space-3);
+}
+
+.tr-h1 {
+  font-family: var(--tr-font);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 60px);
+  line-height: 1.15;
+  color: var(--tr-graphite);
+  margin: 0 0 var(--tr-space-4);
+  letter-spacing: -0.01em;
+}
+
+.tr-h2 {
+  font-family: var(--tr-font);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  color: var(--tr-orange);
+  margin: 0 0 var(--tr-space-4);
+}
+
+.tr-h3 {
+  font-family: var(--tr-font);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--tr-graphite);
+  margin: 0 0 var(--tr-space-3);
+}
+
+.tr-body {
+  font-family: var(--tr-font);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--tr-graphite);
+  margin: 0 0 var(--tr-space-3);
+}
+
+.tr-body-sm {
+  font-family: var(--tr-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--tr-graphite);
+}
+
+.tr-caption {
+  font-family: var(--tr-font);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #999;
+}
+
+/* ------------------------------------------------------------------ */
+/* CTAs                                                               */
+/* ------------------------------------------------------------------ */
+
+.tr-cta-primary,
+.tr-cta-secondary {
+  display: inline-block;
+  font-family: var(--tr-font);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  padding: 16px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.tr-cta-primary {
+  background: var(--tr-orange);
+  color: var(--tr-white);
+}
+.tr-cta-primary:hover {
+  background: var(--tr-racing-green);
+  color: var(--tr-white);
+}
+
+.tr-cta-secondary {
+  background: transparent;
+  color: var(--tr-racing-green);
+  border-color: var(--tr-racing-green);
+}
+.tr-cta-secondary:hover {
+  background: var(--tr-racing-green);
+  color: var(--tr-white);
+}
+
+.tr-section--green .tr-cta-secondary,
+.tr-section--orange .tr-cta-secondary {
+  color: var(--tr-white);
+  border-color: var(--tr-white);
+}
+.tr-section--green .tr-cta-secondary:hover,
+.tr-section--orange .tr-cta-secondary:hover {
+  background: var(--tr-white);
+  color: var(--tr-racing-green);
+}
+
+/* ------------------------------------------------------------------ */
+/* Logo                                                               */
+/* ------------------------------------------------------------------ */
+
+.tr-logo {
+  display: inline-block;
+  width: 140px;
+  height: auto;
+}
+.tr-logo--sm { width: 90px; }
+.tr-logo--lg { width: 200px; }
+
+.tr-footer {
+  padding: var(--tr-space-6) 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
