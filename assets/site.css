@@ -80,6 +80,34 @@ section { padding: 96px 0; position: relative; }
 
 .progress-bar { height: 2px; background: var(--tr-orange); width: 0%; transition: width .12s linear; }
 
+/* Language toggle */
+.lang-toggle {
+  display: inline-flex;
+  background: rgba(18,48,21,0.07);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 0;
+}
+.lang-toggle a {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border-bottom: none;
+  text-transform: uppercase;
+  color: var(--tr-graphite);
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+.topnav nav .lang-toggle a { border-bottom: none; padding: 5px 11px; }
+.lang-toggle a:hover { color: var(--tr-orange); }
+.lang-toggle a.active {
+  background: var(--tr-orange);
+  color: var(--tr-white);
+}
+.lang-toggle a.active:hover { color: var(--tr-white); }
+
 @media (max-width: 980px) {
   .topnav nav { display: none; }
   .topnav .bu-picker > button { display: none; }

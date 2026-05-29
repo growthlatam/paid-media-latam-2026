@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Diagnóstico · Dossier de errores · Paid Media LatAm 2026 · Thomson Reuters</title>
+<link rel="stylesheet" href="../assets/brand.css" />
+<link rel="stylesheet" href="../assets/site.css" />
+<style>
+  .sev { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 9px; border-radius: 4px; white-space: nowrap; }
+  .sev::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .sev-crit { background: var(--tr-orange); color: var(--tr-white); }
+  .sev-crit::before { background: var(--tr-white); }
+  .sev-alto { background: #E9B045; color: #5a3d0a; }
+  .sev-alto::before { background: #5a3d0a; }
+  .sev-med  { background: var(--tr-light-gray); color: var(--tr-dark-gray); }
+  .sev-med::before  { background: var(--tr-dark-gray); }
+  .type-pill { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: rgba(18,48,21,0.08); color: var(--tr-racing-green); }
+  .type-estrutura  { background: rgba(8,116,227,0.10);  color: #0a5fb8; }
+  .type-estrategia { background: rgba(214,64,0,0.10);   color: var(--tr-orange); }
+  .type-tag        { background: rgba(233,176,69,0.20); color: #8a5c14; }
+  .type-mensuracao { background: rgba(77,178,153,0.18); color: #2d8b73; }
+  .type-naming     { background: rgba(18,48,21,0.10);   color: var(--tr-racing-green); }
+  .legend { background: var(--tr-white); border-radius: 10px; padding: 24px 28px; border-left: 4px solid var(--tr-orange); margin-bottom: 48px; }
+  .legend h4 { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: var(--tr-orange); margin: 0 0 14px; }
+  .legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .legend-items { display: flex; flex-direction: column; gap: 10px; }
+  .legend-item { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--tr-dark-gray); line-height: 1.4; }
+  .legend-item strong { color: var(--tr-graphite); }
+  @media (max-width: 768px) { .legend-grid { grid-template-columns: 1fr; } }
+  .sys-card { background: var(--tr-white); border-radius: 10px; padding: 32px 32px 28px; margin-bottom: 22px; border-top: 4px solid var(--tr-orange); transition: transform .25s ease, box-shadow .25s ease; }
+  .sys-card:hover { transform: translateY(-3px); box-shadow: 0 24px 50px rgba(18,48,21,0.10); }
+  .sys-card.sev-card-alto { border-top-color: #E9B045; }
+  .sys-card.sev-card-med  { border-top-color: var(--tr-light-gray); }
+  .sys-card-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .sys-card-id { font-family: monospace; font-size: 12px; font-weight: 700; color: var(--tr-orange); letter-spacing: .04em; }
+  .sys-card h3 { font-size: 22px; font-weight: 500; color: var(--tr-graphite); margin: 0 0 14px; line-height: 1.3; }
+  .sys-card .body { font-size: 15px; line-height: 1.6; color: var(--tr-dark-gray); margin: 0 0 16px; }
+  .sys-card .body strong { color: var(--tr-graphite); font-weight: 500; }
+  .sys-card .why, .sys-card .fix { background: var(--tr-soft-gray); border-radius: 6px; padding: 14px 18px; margin: 0 0 12px; font-size: 14px; line-height: 1.55; color: var(--tr-graphite); }
+  .sys-card .fix { background: rgba(214,64,0,0.06); }
+  .sys-card .why::before, .sys-card .fix::before { display: block; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
+  .sys-card .why::before { content: "Por qué importa"; color: var(--tr-dark-gray); }
+  .sys-card .fix::before { content: "Corrección"; color: var(--tr-orange); }
+  .sys-card code { font-family: monospace; font-size: 13px; background: var(--tr-white); padding: 2px 6px; border-radius: 3px; border: 1px solid rgba(18,48,21,0.08); }
+  .bu-section { margin-bottom: 56px; }
+  .bu-section-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid var(--tr-orange); }
+  .bu-section-head h3 { font-size: 24px; font-weight: 500; color: var(--tr-graphite); margin: 0; }
+  .bu-section-head .spend { font-size: 13px; font-weight: 500; color: var(--tr-orange); letter-spacing: .02em; }
+  .err-table { background: var(--tr-white); border-radius: 8px; border: 1px solid rgba(18,48,21,0.08); overflow-x: auto; margin-bottom: 18px; }
+  .err-table table { width: 100%; border-collapse: collapse; min-width: 800px; }
+  .err-table thead { background: var(--tr-soft-gray); }
+  .err-table th { padding: 12px 16px; text-align: left; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--tr-dark-gray); border-bottom: 1px solid rgba(18,48,21,0.10); }
+  .err-table td { padding: 14px 16px; border-bottom: 1px solid rgba(18,48,21,0.05); font-size: 13px; line-height: 1.5; color: var(--tr-graphite); vertical-align: top; }
+  .err-table tbody tr { transition: background .15s ease; }
+  .err-table tbody tr:hover { background: var(--tr-soft-gray); }
+  .err-table td.id { font-family: monospace; font-size: 11px; color: var(--tr-orange); font-weight: 700; white-space: nowrap; }
+  .err-table td.error { font-weight: 500; color: var(--tr-graphite); }
+  .err-table td.evidence { font-size: 12px; color: var(--tr-dark-gray); }
+  .err-table td.evidence code { font-family: monospace; font-size: 11px; background: var(--tr-soft-gray); padding: 1px 5px; border-radius: 3px; }
+  .err-table td.fix { font-size: 12px; color: var(--tr-orange); }
+  .bu-resumo { background: var(--tr-soft-gray); border-radius: 6px; padding: 14px 18px; font-size: 13px; line-height: 1.55; color: var(--tr-graphite); border-left: 3px solid var(--tr-orange); }
+  .bu-resumo::before { content: "Resumen"; display: block; font-size: 10px; font-weight: 700; letter-spacing: .12em; color: var(--tr-orange); text-transform: uppercase; margin-bottom: 4px; }
+  .bu-resumo strong { font-weight: 500; }
+  .top10 { display: flex; flex-direction: column; gap: 12px; }
+  .top10-item { display: grid; grid-template-columns: 56px 1fr; gap: 18px; background: var(--tr-white); border-radius: 8px; padding: 18px 22px; border-left: 3px solid var(--tr-orange); transition: transform .2s ease, box-shadow .2s ease; }
+  .top10-item:hover { transform: translateX(3px); box-shadow: 0 12px 30px rgba(18,48,21,0.08); }
+  .top10-num { font-size: 38px; font-weight: 200; line-height: 1; color: var(--tr-orange); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .top10-content { display: flex; flex-direction: column; gap: 6px; }
+  .top10-content .ids { font-family: monospace; font-size: 11px; font-weight: 700; color: var(--tr-orange); letter-spacing: .04em; }
+  .top10-content .title { font-size: 16px; font-weight: 500; color: var(--tr-graphite); line-height: 1.35; }
+  .top10-content .desc { font-size: 13px; line-height: 1.55; color: var(--tr-dark-gray); }
+  .top10-content .desc strong { color: var(--tr-graphite); font-weight: 500; }
+</style>
+</head>
+<body data-page="diagnostico">
+
+<a href="#main" class="skip">Saltar al contenido</a>
+<header class="topnav" id="site-nav"></header>
+
+<main id="main">
+
+<section class="hero" style="padding: 64px 0 32px;">
+  <div class="page">
+    <div class="hero-eyebrow reveal">Material de apoyo · Paid Media LatAm 2026</div>
+    <h1 class="reveal">Diagnóstico · <span class="accent">dossier de errores.</span></h1>
+    <p class="hero-sub reveal reveal-delay-1">
+      Este documento <strong>no es un diagnóstico de performance</strong> — es una auditoría de lo que está
+      mal montado, mal clasificado, mal nombrado o mal posicionado estratégicamente en las campañas YTD.
+      Cada error tiene severidad, tipo, evidencia en los datos y corrección sugerida.
+    </p>
+  </div>
+</section>
+
+<section style="padding: 32px 0 0;" class="section--gray">
+  <div class="page">
+    <div class="legend reveal">
+      <div class="legend-grid">
+        <div>
+          <h4>Severidad</h4>
+          <div class="legend-items">
+            <div class="legend-item"><span class="sev sev-crit">Crítico</span><span>Distorsiona la decisión, quema presupuesto o impide la medición correcta</span></div>
+            <div class="legend-item"><span class="sev sev-alto">Alto</span><span>Perjudica performance o learning del algoritmo</span></div>
+            <div class="legend-item"><span class="sev sev-med">Medio</span><span>Higiene / gobernanza / costo de oportunidad</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Tipos de error</h4>
+          <div class="legend-items">
+            <div class="legend-item"><span class="type-pill type-estrutura">ESTRUCTURA</span><span>Montaje / organización de la campaña</span></div>
+            <div class="legend-item"><span class="type-pill type-estrategia">ESTRATEGIA</span><span>Elección de canal / funnel / producto</span></div>
+            <div class="legend-item"><span class="type-pill type-tag">TAG</span><span>Clasificación errada en la taxonomía</span></div>
+            <div class="legend-item"><span class="type-pill type-mensuracao">MEDICIÓN</span><span>Tracking o evento de conversión</span></div>
+            <div class="legend-item"><span class="type-pill type-naming">NAMING</span><span>Nomenclatura inconsistente</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--gray" style="padding: 32px 0 64px;">
+  <div class="page">
+    <div class="section-head reveal">
+      <div class="section-eyebrow"><span class="num">1</span>Errores sistémicos · afectan a todas las BUs</div>
+      <h2 class="section-title">Patrones que <em>atraviesan todo el portfolio.</em></h2>
+      <p class="section-lede">No son errores de una BU específica — contaminan la lectura de todas. Resolver los sistémicos primero destraba la calidad del diagnóstico de las BUs individuales.</p>
+    </div>
+
+    <div class="sys-card reveal">
+      <div class="sys-card-header"><span class="sev sev-crit">Crítico</span><span class="type-pill type-tag">TAG</span><span class="sys-card-id">E-SIS-01</span></div>
+      <h3>Todo Search NonBrand está clasificado como BoFu</h3>
+      <p class="body">El error más consecuente del portfolio. Todas las campañas Search NonBrand están marcadas como <code>BoFu</code> en la taxonomía oficial. Ejemplos: <code>Dominio_Search_NonBrand</code> (BoFu), <code>Tax-One_Search_NonBrand</code> (BoFu), <code>LegalCorp-Solucoes-Juridicas NonBrand</code> (BoFu), <code>HighQ NonBrand</code> (BoFu).</p>
+      <p class="body">El NonBrand de términos genéricos ("software contable", "sistema de gestión jurídica", "compliance fiscal") es gente buscando <strong>categoría/solución</strong> — eso es consideración (MoFu), no fondo de funnel. El BoFu de verdad es Brand + retargeting + intención de demo.</p>
+      <p class="why">Esto hace que el portfolio parezca tener 33,6% de "BoFu" saludable cuando, en la práctica, buena parte es NonBrand de consideración mal etiquetado. La lectura de funnel de toda la empresa está distorsionada — el ToFu real (5,9%) es el síntoma, pero el "BoFu inflado" esconde que el MoFu de captura de demanda también es débil. <strong>Toda decisión de presupuesto por funnel se está tomando sobre un número equivocado.</strong></p>
+      <p class="fix">Separar NonBrand-Genérico (MoFu) de NonBrand-Comercial / Competidor (BoFu) y de Brand (BoFu). Reclasificar antes de cualquier planificación de mix de funnel.</p>
+    </div>
+
+    <div class="sys-card reveal">
+      <div class="sys-card-header"><span class="sev sev-crit">Crítico</span><span class="type-pill type-mensuracao">MEDICIÓN</span><span class="sys-card-id">E-SIS-02</span></div>
+      <h3>Ausencia aparente de evento de conversión de calidad</h3>
+      <p class="body">No hay señal en los datos de que PMax, Demand Gen y Advantage+ estén optimizando para SQL. Cuando el evento es form submit, esos canales black-box optimizan para volumen bruto de lead — y es exactamente donde están puestos PMax (Dominio, Tax CL, Westlaw) y Demand Gen (todo el ToFu).</p>
+      <p class="why"><strong>Escalar cualquiera de estos sin un conversion event de SQL = escalar basura.</strong> La plataforma optimiza para lo que ve — si ve "form submit" como éxito, va a traer formularios, no pipeline calificado.</p>
+      <p class="fix">CAPI / Enhanced Conversions / LinkedIn CAPI con evento de SQL — antes de escalar cualquier AI campaign.</p>
+    </div>
+
+    <div class="sys-card reveal sev-card-alto">
+      <div class="sys-card-header"><span class="sev sev-alto">Alto</span><span class="type-pill type-naming">NAMING</span><span class="sys-card-id">E-SIS-03</span></div>
+      <h3>Al menos 5 convenciones de nomenclatura coexistiendo</h3>
+      <p class="body">Señales de que las campañas fueron creadas por personas / épocas distintas sin estándar:</p>
+      <ul style="font-size: 14px; line-height: 1.6; color: var(--tr-dark-gray); margin: 0 0 14px; padding-left: 22px;">
+        <li>Capitalización inconsistente: <code>Legallabr_IT_HighQ</code> vs <code>LegalLABR_IT_…</code></li>
+        <li>Estructuras distintas en la misma BU: <code>CorpLABR_MN_CLC_GTM-ToFu-DemandGen</code> vs <code>CorpLABR_GTM-MoFu-DemandGen</code></li>
+        <li>Legal Corp tiene 5 patrones: <code>CorpLABR_IT_LegalCorp</code>, <code>CorpLABR_MN_CLC_LEGAL</code>, <code>CorpLABR_MN_Legal_MOF</code>, <code>CorpLABR_LEGAL-ToFu</code>, <code>CorpLABR_Legal_MOF_Guia</code></li>
+      </ul>
+      <p class="why">Rompe la automatización del reporte, dificulta los pivots (hizo falta heurística para reagrupar) e indica falta de dueño de gobernanza. Cada reporte por producto o tema exige limpieza manual — por eso los pivots oficiales no muestran corte por producto.</p>
+      <p class="fix">Taxonomía única documentada: <code>[BU]_[Producto]_[Funnel]_[Canal]_[Formato]_[Geo]</code> y enforcement en la creación de nuevas campañas.</p>
+    </div>
+
+    <div class="sys-card reveal sev-card-alto">
+      <div class="sys-card-header"><span class="sev sev-alto">Alto</span><span class="type-pill type-estrutura">ESTRUCTURA</span><span class="sys-card-id">E-SIS-04</span></div>
+      <h3>Migraciones de campaña con pérdida de histórico</h3>
+      <p class="body">Patrón recurrente de "matar y recrear" en vez de optimizar la campaña existente — cada recreación resetea el learning del algoritmo:</p>
+      <ul style="font-size: 14px; line-height: 1.6; color: var(--tr-dark-gray); margin: 0 0 14px; padding-left: 22px;">
+        <li>Dominio NonBrand: <code>_NonBrand</code> → <code>_NonBrand_skag</code> → <code>_NonBrand_2</code> (tres generaciones ene-may)</li>
+        <li>Legal-One Brand: base → <code>_NOVA</code> en abril con US$ 16,6K ya en el primer mes — recreación, no test</li>
+        <li>La Ley: <code>LaLey_Main_Search_Brand-Multi_AR</code> → <code>LaLey_Search_Brand</code> → <code>WF_Search_Brand</code> (perdió el "LaLey")</li>
+        <li>Westlaw CH: <code>Westlaw_Main_Search_PMax_CH</code> → <code>Westlaw_PMax</code></li>
+      </ul>
+      <p class="fix">Optimizar in-place. Renombrar solo con necesidad real y documentándolo. Nunca recrear campaña madura sin migración de assets ni histórico.</p>
+    </div>
+
+    <div class="sys-card reveal sev-card-alto">
+      <div class="sys-card-header"><span class="sev sev-alto">Alto</span><span class="type-pill type-estrategia">ESTRATEGIA</span><span class="sys-card-id">E-SIS-05</span></div>
+      <h3>Recorte central de tope de funnel en mayo</h3>
+      <p class="body">CLC (TAX/GTM/LEGAL), Reforma Tributaria, GTM LinkedIn ABM, Pronto-Pronto, AI Legal AR, Bejerman y Onvio cayeron <strong>todos juntos en mayo</strong>. La simultaneidad indica decisión central de presupuesto, no casualidad.</p>
+      <p class="why">Se cortó el lado equivocado de la ecuación — justo lo que crea demanda futura, manteniendo solo la captura. Eso protege el trimestre actual y compromete el pipeline de Q3-Q4.</p>
+      <p class="fix">Confirmar la decisión de mayo con el equipo. Si fue corte de presupuesto, repensar la distribución antes del próximo ciclo.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 96px 0;">
+  <div class="page">
+    <div class="section-head reveal">
+      <div class="section-eyebrow"><span class="num">2</span>Errores por BU</div>
+      <h2 class="section-title">Defectos específicos <em>de cada business unit.</em></h2>
+      <p class="section-lede">Ordenado por gasto YTD decreciente. Las tablas tienen scroll horizontal en pantallas chicas.</p>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>TAAP BR · Dominio</h3><span class="spend">US$ 205,9K YTD · 23,5% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">DOM-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Sin motor de demanda nueva. ToFu = 1,3% en un SaaS SMB que depende de creación de demanda</td><td class="evidence">Demand Gen US$ 2,7K YTD vs US$ 163,6K en Search</td><td class="fix">Escalar Demand Gen + Reels al 15-20% de la BU</td></tr>
+          <tr><td class="id">DOM-02</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Brand Search comprado en exceso · saltó de US$ 12,6K (feb) → US$ 25,6K (mar), +103% en un mes</td><td class="evidence">Pico de marzo sin evento estacional obvio</td><td class="fix">Capar Brand en el nivel natural · nadie más bidea "Dominio" en ese volumen</td></tr>
+          <tr><td class="id">DOM-03</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Tres generaciones de NonBrand (<code>skag</code>, <code>_2</code>, base) con migración mal hecha</td><td class="evidence">Ene: base + skag · Mar: base + _2 · Abr-may: solo _2</td><td class="fix">Consolidar en 1 campaña NonBrand estructurada</td></tr>
+          <tr><td class="id">DOM-04</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Inova discontinuada sin transición · era la que alimentaba demanda nueva</td><td class="evidence">US$ 2K (ene) → US$ 0 (abr-may)</td><td class="fix">Decidir: reactivar como ToFu de Dominio o reemplazar la función</td></tr>
+          <tr><td class="id">DOM-05</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-tag">Tag</span></td><td class="error">NonBrand_2 (US$ 70K) marcado como BoFu — ver E-SIS-01</td><td class="evidence">—</td><td class="fix">Reclasificar como MoFu</td></tr>
+          <tr><td class="id">DOM-06</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-tag">Tag</span></td><td class="error"><code>New-Name_Flashback</code> marcado como BoFu, pero "Flashback" sugiere reactivación / awareness</td><td class="evidence">Meta US$ 1,9-2,4K/mes</td><td class="fix">Validar la intención real de la campaña</td></tr>
+        </tbody>
+      </table></div>
+      <div class="bu-resumo">El error madre es estratégico (DOM-01) — la BU más grande del portfolio funcionando sin creación de demanda, sostenida por Brand Search comprado en exceso (DOM-02). Cuando el Brand sature, no hay red de seguridad.</div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Legal BR</h3><span class="spend">US$ 162,2K YTD · 18,5% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">LBR-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">HighQ (enterprise, ~200 estudios) corriendo 100% Search, siendo recortado −82% sin migrar a ABM</td><td class="evidence">Ene US$ 6,7K → may US$ 1,2K · cero LinkedIn</td><td class="fix">Migrar a LinkedIn ABM antes de recortar más</td></tr>
+          <tr><td class="id">LBR-02</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Pronto-Pronto (único producto con funnel saludable y multicanal) siendo desfinanciado</td><td class="evidence">Feb US$ 11,9K → may US$ 2,3K · −81%</td><td class="fix">Revertir el recorte · es el modelo a escalar</td></tr>
+          <tr><td class="id">LBR-03</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-tag">Tag</span></td><td class="error">CoCounsel Search marcado como <strong>Brand</strong> — categoría nueva, nadie busca la marca todavía</td><td class="evidence"><code>LegalLACH_GR_CoCounsel_Search</code> Type=Brand (abr-may)</td><td class="fix">Reclasificar NonBrand/Generic · es educación de categoría</td></tr>
+          <tr><td class="id">LBR-04</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Large lanzado pulverizado: 7 ad sets &lt;US$ 250 cada uno — impide el learning de LinkedIn</td><td class="evidence">May: PMax $142 · YT $156 · DG $195 · LinkedIn 4 ad sets $0-210</td><td class="fix">Consolidar en 2-3 ad sets con masa crítica o pausar</td></tr>
+          <tr><td class="id">LBR-05</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">CoCounsel lanzado solo con Search, sin ToFu de educación, en un mercado con ventana competitiva</td><td class="evidence">US$ 1,2K total · sin YouTube / Thought Leader</td><td class="fix">Relanzar ToFu-heavy (50/30/20) o aceptar ser fast-follower</td></tr>
+          <tr><td class="id">LBR-06</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-tag">Tag</span></td><td class="error">Legal-One <code>Top-Regioes</code> / <code>Demais-Regioes</code> nombrados "Brand-Multi" pero Type=NonBrand</td><td class="evidence">PDF: ambos NonBrand, el nombre dice Brand</td><td class="fix">Corregir el tag · afecta la lectura de mix Brand vs NonBrand</td></tr>
+          <tr><td class="id">LBR-07</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Legal-One Brand fragmentado en 4 campañas paralelas (base, NOVA, Top, Demais)</td><td class="evidence">Competencia interna de subasta</td><td class="fix">Consolidar · usar segmentación geo por ad group, no por campaña</td></tr>
+          <tr><td class="id">LBR-08</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Legal-One 100% captura (cero ToFu, cero LinkedIn) absorbiendo el presupuesto que salió de Pronto-Pronto / HighQ</td><td class="evidence">US$ 103K · 63,6% de la BU</td><td class="fix">Está apostando al producto en ceiling · rebalancear</td></tr>
+        </tbody>
+      </table></div>
+      <div class="bu-resumo">El error estratégico central es de <strong>priorización invertida</strong> (LBR-02 + LBR-08) — el presupuesto está migrando del producto correcto (Pronto-Pronto, mix completo) al producto en ceiling (Legal-One, captura pura). HighQ (LBR-01) y CoCounsel (LBR-05) son errores de canal: productos enterprise / categoría-nueva tratados con Search cuando necesitan ABM / educación.</div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Corp BR · Tax Corp</h3><span class="spend">US$ 137,9K YTD · 15,7% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">TAX-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Naming pegado: dos nombres de campaña concatenados en uno solo</td><td class="evidence"><code>Tax-One_Search_Brand-Multi_BR CorpLABR_MN_TaxCorp-ONESOURCE_Tax-One_Search_Brand-Multi_BR_TesteA/B</code> · abr US$ 1,2K, may US$ 848</td><td class="fix">Error de merge / export · auditar la campaña real</td></tr>
+          <tr><td class="id">TAX-02</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Reforma Tributaria subdimensionada en el año de la Reforma (18% de la BU) y desacelerando</td><td class="evidence">Abr US$ 6,6K → may US$ 3,9K</td><td class="fix">Es el tema del año · debería ser el motor, no un experimento</td></tr>
+          <tr><td class="id">TAX-03</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Tax-One NonBrand duplicado: <code>Multi_2</code> + <code>Multi_Skag</code> compitiendo</td><td class="evidence">Ene-mar ambos activos (US$ 6-22K + US$ 5K)</td><td class="fix">Consolidar · canibalización de subasta + datos fragmentados</td></tr>
+          <tr><td class="id">TAX-04</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Reforma PESQUISA pulverizada: 3 ad sets ToFu con US$ 38-578</td><td class="evidence">Abr: Conv_Web $578 · Vis_Page $449 · Download $38</td><td class="fix">Consolidar · volumen insuficiente para learning</td></tr>
+          <tr><td class="id">TAX-05</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Dos estrategias de Reforma compitiendo sin test limpio (DESCOMPLEXA vs PESQUISA)</td><td class="evidence">Demand Gen + LinkedIn vs LinkedIn ToFu</td><td class="fix">Definir hipótesis única o estructurar A/B real</td></tr>
+          <tr><td class="id">TAX-06</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Tax-One Brand saltó a US$ 9,3K (abr) desde US$ 5K (mar)</td><td class="evidence">+86% en un mes</td><td class="fix">Verificar si hay over-bid en término de marca</td></tr>
+        </tbody>
+      </table></div>
+      <div class="bu-resumo">Mezcla de errores de estructura (TAX-01 naming pegado · TAX-03 duplicación) y el error estratégico más caro del portfolio en contexto: <strong>subinvertir Reforma Tributaria en el año de la Reforma</strong> (TAX-02), encima con la verba dividida en dos estrategias mal-comparables (TAX-05).</div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Corp BR · GTM Corp</h3><span class="spend">US$ 65,3K YTD · 7,5% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">GTM-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">La mejor estructura del portfolio (LinkedIn ABM full-funnel) siendo desfinanciada</td><td class="evidence">LinkedIn ABM: abr US$ 5,6K → may US$ 2,9K · Global Trade −55% ene-may</td><td class="fix">Proteger y escalar · es uno de los 2 modelos de la casa</td></tr>
+          <tr><td class="id">GTM-02</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">PMax corriendo para ICP enterprise (1.500 cuentas) · sin señal para optimizar</td><td class="evidence"><code>GTM_MoFu-ERPs e ONESOURCE_PMax</code> US$ 90 (abr) → US$ 718 (may)</td><td class="fix">Pausar PMax · enterprise estrecho no es caso de uso de PMax</td></tr>
+          <tr><td class="id">GTM-03</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Bing con gasto irrisorio que solo genera overhead</td><td class="evidence">Global-Trade Bing US$ 2,99 (abr) · PMax Bing US$ 6,59 (may)</td><td class="fix">Consolidar o pausar microcampañas</td></tr>
+          <tr><td class="id">GTM-04</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-naming">Naming</span></td><td class="error">Dos convenciones: <code>CLC_GTM-ToFu-DemandGen</code> vs <code>GTM-MoFu-DemandGen</code></td><td class="evidence">+ <code>#2</code> duplicada en marzo</td><td class="fix">Unificar naming</td></tr>
+        </tbody>
+      </table></div>
+      <div class="bu-resumo">Irónicamente la sub-BU mejor estructurada es víctima del error más frustrante — <strong>desfinanciar la estructura correcta</strong> (GTM-01). Acá el problema no es montaje, es decisión de alocación: lo que funciona está perdiendo verba.</div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Corp BR · Legal Corp</h3><span class="spend">US$ 61,2K YTD · 7,0% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">LC-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-naming">Naming</span></td><td class="error">Cinco convenciones de naming para el mismo sub-BU</td><td class="evidence"><code>IT_LegalCorp</code> · <code>MN_CLC_LEGAL</code> · <code>MN_Legal_MOF</code> · <code>LEGAL-ToFu</code> · <code>Legal_MOF_Guia</code></td><td class="fix">Estandarizar · imposible reportar producto sin limpieza manual</td></tr>
+          <tr><td class="id">LC-02</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">MoFu casi inexistente · gap de funnel</td><td class="evidence">MoFu 7,1% del sub-BU</td><td class="fix">Abrir MoFu: Demand Gen + LinkedIn Document Ads</td></tr>
+          <tr><td class="id">LC-03</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Ebook IA Jurídica (Demand Gen) muerto sin reemplazo</td><td class="evidence">Ene-mar US$ 0,3-1,3K → US$ 0</td><td class="fix">Reactivar o reemplazar el contenido de tope</td></tr>
+          <tr><td class="id">LC-04</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error"><code>LEGAL-ToFu-DemandGen</code> corrió US$ 4,58 en abril — campaña fantasma</td><td class="evidence">Abr US$ 4,58 · may US$ 583</td><td class="fix">Definir presupuesto mínimo o no encender</td></tr>
+        </tbody>
+      </table></div>
+      <div class="bu-resumo">El peor caso de <strong>caos de nomenclatura</strong> del portfolio (LC-01) — cinco patrones para el mismo sub-BU es la razón de que no haya reporte por producto acá. Estratégicamente, el agujero de MoFu (LC-02) es el gap a cerrar.</div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>TAAP AR · Bejerman + Onvio</h3><span class="spend">US$ 135,8K YTD · 15,5% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">AR-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Cero LinkedIn en los dos, con un ICP (estudio contable mid-market) que vive en LinkedIn AR</td><td class="evidence">Bejerman US$ 0 + Onvio US$ 0 LinkedIn</td><td class="fix">Abrir LinkedIn ABM AR</td></tr>
+          <tr><td class="id">AR-02</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Caída de ~50% en mayo en los dos al mismo tiempo, sin explicación</td><td class="evidence">Bejerman US$ 18,5K → 8,4K · Onvio US$ 12,6K → 6,3K</td><td class="fix">Investigar: ¿corte, estacional o pausa?</td></tr>
+          <tr><td class="id">AR-03</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Onvio Always On Meta con fatiga de creative sin tratar</td><td class="evidence">Mar US$ 6,5K (pico) → may US$ 3,7K · sin refresh</td><td class="fix">Refresh trimestral de creativo obligatorio</td></tr>
+          <tr><td class="id">AR-04</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-tag">Tag</span></td><td class="error">Onvio "Always On" cambia de BoFu (ene-mar) a MoFu (abr-may) — misma campaña, clasificación inconsistente</td><td class="evidence">PDF granular</td><td class="fix">Estandarizar la clasificación de la misma campaña</td></tr>
+          <tr><td class="id">AR-05</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Bejerman Sueldos corriendo aislado y muriendo</td><td class="evidence">Mar US$ 819 → may US$ 238</td><td class="fix">Consolidar con Bejerman ERP o justificar</td></tr>
+        </tbody>
+      </table></div>
+      <div class="bu-resumo">Dos errores críticos: <strong>canal ausente</strong> (AR-01 · cero LinkedIn para el ICP correcto) y <strong>discontinuidad no-explicada</strong> (AR-02). La fatiga de creative del Always On (AR-03) es el tipo de error silencioso que hace que "always on" se vuelva "always declining".</div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Legal AR</h3><span class="spend">US$ 48,9K YTD · 5,4% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">LAR-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">AI Legal apareció (abr US$ 1,6K) y desapareció (may US$ 0) — categoría de ventana competitiva tratada sin continuidad</td><td class="evidence"><code>WF_Inteligencia Artificial Legal_MoFu</code></td><td class="fix">Reactivar y dar continuidad · la ventana se cierra</td></tr>
+          <tr><td class="id">LAR-02</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Pan-GTM corrió solo enero (US$ 6,6K) y fue abandonado</td><td class="evidence">Feb-may US$ 0</td><td class="fix">Campaña huérfana · investigar por qué paró</td></tr>
+          <tr><td class="id">LAR-03</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-tag">Tag</span></td><td class="error"><code>WF_Search_Brand</code> (abr US$ 2,3K, may US$ 1,5K) clasificado Type=<strong>Pmax</strong></td><td class="evidence">PDF: Type=Pmax · nombre=Search_Brand</td><td class="fix">Corregir el tag</td></tr>
+          <tr><td class="id">LAR-04</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Cero LinkedIn + cero ToFu en una BU que vende sin educar al mercado AR</td><td class="evidence">Mix 51% MoFu / 49% BoFu · 0% ToFu</td><td class="fix">Construir categoría (AI legal) vía LinkedIn / YouTube</td></tr>
+          <tr><td class="id">LAR-05</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error"><code>WF_</code> agrega cosas distintas bajo un prefijo: Westlaw, La Ley, Pan-GTM, Soluciones</td><td class="evidence">Difícil saber qué es qué</td><td class="fix">Separar productos en el naming</td></tr>
+          <tr><td class="id">LAR-06</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Legal-One AR Brand residual (US$ 34-79/mes) corriendo aislado</td><td class="evidence">Ene-abr &lt;US$ 80</td><td class="fix">Consolidar con La Ley o pausar</td></tr>
+        </tbody>
+      </table></div>
+      <div class="bu-resumo">La BU con más errores de <strong>abandono de campaña</strong> — AI Legal (LAR-01) y Pan-GTM (LAR-02) prendidos y apagados sin lógica visible. Más el error de tag Pmax / Search (LAR-03) que distorsiona la lectura de canal.</div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Tax Chile</h3><span class="spend">US$ 26,1K YTD · 3,0% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">TCL-01</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">95,7% BoFu · 0% MoFu — solo captura, cero consideración</td><td class="evidence">Pivot oficial</td><td class="fix">Abrir Demand Gen + LinkedIn CL</td></tr>
+          <tr><td class="id">TCL-02</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrutura">Estructura</span></td><td class="error">Contable PMax con presupuesto errático</td><td class="evidence">Mar US$ 39 → abr US$ 716 → may US$ 973</td><td class="fix">Estabilizar presupuesto · PMax necesita consistencia</td></tr>
+          <tr><td class="id">TCL-03</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Hyperrenta (estacional tax season) sin plan de transición post-temporada</td><td class="evidence">Mar US$ 1,3K → may US$ 297</td><td class="fix">Plan de qué-hacer-fuera-de-la-temporada</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Legal Chile</h3><span class="spend">US$ 15,1K YTD · 1,7% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">LCL-01</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">100% BoFu — Westlaw + CoCounsel vendidos sin construcción de categoría</td><td class="evidence">Pivot oficial</td><td class="fix">Abrir ToFu / MoFu</td></tr>
+          <tr><td class="id">LCL-02</td><td><span class="sev sev-alto">Alto</span></td><td><span class="type-pill type-tag">Tag</span></td><td class="error">CoCounsel Search marcado como Brand (mismo error que BR · LBR-03)</td><td class="evidence">Abr US$ 50 · may US$ 572</td><td class="fix">Reclasificar NonBrand</td></tr>
+          <tr><td class="id">LCL-03</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">CoCounsel lanzado sub-escala (US$ 822 FB + US$ 572 Search)</td><td class="evidence">Mayo</td><td class="fix">Escalar con ToFu o esperar que BR valide</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Institucional</h3><span class="spend">US$ 16,1K YTD · 1,8% del portfolio</span></div>
+      <div class="err-table"><table>
+        <thead><tr><th>ID</th><th>Sev</th><th>Tipo</th><th>Error</th><th>Evidencia</th><th>Corrección</th></tr></thead>
+        <tbody>
+          <tr><td class="id">INS-01</td><td><span class="sev sev-crit">Crítico</span></td><td><span class="type-pill type-estrategia">Estrategia</span></td><td class="error">Paró en mayo · brand pressure apagada — encarece el Brand Search de las demás BUs en 3-6 meses</td><td class="evidence">US$ 4K/mes (ene) → US$ 0 (may)</td><td class="fix">Reactivar · el costo aparece en el CAC futuro, no en el CPL actual</td></tr>
+          <tr><td class="id">INS-02</td><td><span class="sev sev-med">Medio</span></td><td><span class="type-pill type-mensuracao">Medición</span></td><td class="error">Sin métrica de incremental lift definida (institucional no genera lead directo)</td><td class="evidence">—</td><td class="fix">Medir vía search lift de las demás BUs + brand survey</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="bu-section reveal">
+      <div class="bu-section-head"><h3>Brazil RH</h3><span class="spend">US$ 1,2K YTD · 0,1% del portfolio</span></div>
+      <p style="font-size: 14px; color: var(--tr-dark-gray); line-height: 1.55; margin: 0;">Sin errores relevantes. Función de reclutamiento, fuera del scope de pipeline comercial. Único reparo posible: gasto tan bajo (US$ 174 en mayo) que tal vez no valga el overhead de gestión como campaña separada.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section--gray">
+  <div class="page">
+    <div class="section-head reveal">
+      <div class="section-eyebrow"><span class="num">3</span>Top 10 correcciones priorizadas</div>
+      <h2 class="section-title">Por dónde <em>empezar.</em></h2>
+      <p class="section-lede">Ordenadas por impacto sobre la meta (volumen de pipeline sin perder calificación) y costo de implementación. Los 3 primeros destraban el resto.</p>
+    </div>
+
+    <div class="top10">
+      <div class="top10-item reveal"><div class="top10-num">01</div><div class="top10-content"><div class="ids">E-SIS-02</div><div class="title">Implementar conversion event de SQL</div><div class="desc">Habilita todo. Sin esto, escalar PMax / Demand Gen / Advantage+ multiplica basura. <strong>2-3 semanas de implementación.</strong></div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">02</div><div class="top10-content"><div class="ids">E-SIS-01</div><div class="title">Reclasificar funnel · NonBrand-Genérico = MoFu</div><div class="desc">Toda decisión de mix está sobre un número equivocado. <strong>1 semana · es taxonomía, no ingeniería.</strong></div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">03</div><div class="top10-content"><div class="ids">E-SIS-05 · AR-02</div><div class="title">Investigar el recorte de mayo</div><div class="desc">Antes de planificar Q3, entender qué se apagó y por qué. Confirmar si fue decisión central de presupuesto — y revisarla si lo fue.</div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">04</div><div class="top10-content"><div class="ids">GTM-01 · LBR-02</div><div class="title">Dejar de desfinanciar los 2 modelos de la casa</div><div class="desc">GTM LinkedIn ABM y Pronto-Pronto. Son las únicas estructuras full-funnel del portfolio. Recortar a lo que funciona es lo opuesto a eficiencia.</div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">05</div><div class="top10-content"><div class="ids">TAX-02</div><div class="title">Reescalar Reforma Tributaria</div><div class="desc">Año de la Reforma · tema subdimensionado. La mayor oportunidad de pipeline nuevo del portfolio en 2026.</div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">06</div><div class="top10-content"><div class="ids">LBR-01</div><div class="title">Migrar HighQ a LinkedIn ABM</div><div class="desc">Antes de recortar más el Search. Producto enterprise en el canal equivocado — ABM es el camino natural para 200 estudios.</div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">07</div><div class="top10-content"><div class="ids">AR-01</div><div class="title">Abrir LinkedIn AR · Bejerman + Onvio</div><div class="desc">Canal ausente para el ICP correcto (el contador AR mid-market vive en LinkedIn AR, sobre todo Buenos Aires).</div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">08</div><div class="top10-content"><div class="ids">LBR-03 · LBR-06 · LAR-03 · LCL-02 · AR-04 · DOM-06</div><div class="title">Operativo de taxonomía · corregir tags en bloque</div><div class="desc">Distorsionan la lectura de canal y funnel. Resolverlos en un solo operativo evita re-trabajo de reporte.</div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">09</div><div class="top10-content"><div class="ids">TAX-01 · TAX-03 · DOM-03 · LBR-04 · LBR-07</div><div class="title">Consolidar campañas duplicadas y pulverizadas</div><div class="desc">Recupera el learning del algoritmo y limpia datos para el análisis. La mayor parte es trabajo manual, no estrategia.</div></div></div>
+      <div class="top10-item reveal"><div class="top10-num">10</div><div class="top10-content"><div class="ids">E-SIS-03 · LC-01</div><div class="title">Estandarizar la nomenclatura cross-portfolio</div><div class="desc">Sin esto, ningún reporte por producto es confiable sin trabajo manual. Definir el estándar único y aplicar enforcement a las nuevas campañas.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 64px 0 32px;">
+  <div class="page">
+    <div class="budget-explainer reveal" style="background: var(--tr-soft-gray); border-left-color: var(--tr-orange);">
+      <h4>Nota de método</h4>
+      <p style="margin: 0; font-size: 13px; line-height: 1.55; color: var(--tr-dark-gray);">
+        Los errores de TAG fueron verificados línea por línea en el reporte granular. Casos confirmados de Type
+        divergente del nombre de la campaña: <code style="font-family: monospace; font-size: 12px; background: var(--tr-white); padding: 2px 5px; border-radius: 3px;">LegalLAAG_WF_Search_Brand</code> (Type=Pmax),
+        <code style="font-family: monospace; font-size: 12px; background: var(--tr-white); padding: 2px 5px; border-radius: 3px;">Legal-One Top/Demais-Regioes</code> (Type=NonBrand, nombre=Brand-Multi),
+        <code style="font-family: monospace; font-size: 12px; background: var(--tr-white); padding: 2px 5px; border-radius: 3px;">CoCounsel_Search</code> (Type=Brand).
+        El error de clasificación de funnel (E-SIS-01) es una elección de taxonomía del equipo, no un bug —
+        pero tiene una consecuencia analítica lo suficientemente grande como para entrar como error crítico.
+      </p>
+      <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.55; color: var(--tr-dark-gray); font-style: italic;">
+        Auditoría sobre CSV Google (ene-may), PDF granular completo (Google / Meta / LinkedIn / Bing)
+        y pivots oficiales. Total YTD US$ 882.642. Las pequeñas divergencias entre el CSV (re-export de mayo)
+        y los pivots no afectan a los errores apuntados.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer-section" id="site-footer"></footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
