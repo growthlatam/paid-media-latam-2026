@@ -3,608 +3,51 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Paid Media LatAm 2026 YTD · Diagnóstico, padrões e plano · Thomson Reuters</title>
+<meta name="robots" content="noindex, nofollow" />
+<title>Paid Media LatAm 2026 · Resumo executivo · Thomson Reuters</title>
 <link rel="stylesheet" href="assets/brand.css" />
-<style>
-  /* ---------- Layout ---------- */
-  .page { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-  .wide { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
-
-  /* ---------- Sticky top nav ---------- */
-  .topnav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: saturate(160%) blur(10px);
-    -webkit-backdrop-filter: saturate(160%) blur(10px);
-    border-bottom: 1px solid rgba(18,48,21,0.08);
-  }
-  .topnav-inner {
-    max-width: 1320px; margin: 0 auto; padding: 14px 32px;
-    display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  }
-  .topnav img { height: 32px; }
-  .topnav nav { display: flex; gap: 22px; }
-  .topnav nav a {
-    font-size: 13px; font-weight: 500; color: var(--tr-graphite);
-    text-decoration: none; padding: 6px 0;
-    border-bottom: 2px solid transparent;
-    transition: color .2s ease, border-color .2s ease;
-  }
-  .topnav nav a:hover { color: var(--tr-orange); border-bottom-color: var(--tr-orange); }
-  .progress-bar { height: 2px; background: var(--tr-orange); width: 0%; transition: width .12s linear; }
-  @media (max-width: 900px) { .topnav nav { display: none; } }
-
-  /* ---------- Hero ---------- */
-  .hero {
-    position: relative; overflow: hidden;
-    padding: 96px 0 64px;
-    background:
-      radial-gradient(1200px 480px at 80% -10%, rgba(214,64,0,0.12), transparent 60%),
-      radial-gradient(900px 500px at -5% 110%, rgba(18,48,21,0.10), transparent 60%),
-      var(--tr-white);
-  }
-  .hero-eyebrow {
-    font-size: 13px; font-weight: 500; letter-spacing: .14em;
-    color: var(--tr-orange); text-transform: uppercase;
-    margin-bottom: 18px; display: inline-flex; align-items: center; gap: 10px;
-  }
-  .hero-eyebrow::before {
-    content:""; width: 36px; height: 2px; background: var(--tr-orange);
-  }
-  .hero h1 {
-    font-family: var(--tr-font);
-    font-weight: 400;
-    font-size: clamp(44px, 6.4vw, 76px);
-    line-height: 1.06; letter-spacing: -0.015em;
-    color: var(--tr-graphite); margin: 0 0 22px;
-    max-width: 980px;
-  }
-  .hero h1 .accent {
-    color: var(--tr-orange); font-weight: 500;
-    font-style: italic;
-  }
-  .hero-sub {
-    max-width: 720px; font-size: 19px; font-weight: 300;
-    color: var(--tr-dark-gray); line-height: 1.55; margin: 0 0 36px;
-  }
-  .meta-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
-  .meta-pill {
-    border: 1.5px solid rgba(18,48,21,0.18);
-    color: var(--tr-racing-green);
-    border-radius: 999px; padding: 8px 16px;
-    font-size: 13px; font-weight: 500;
-  }
-  .meta-pill strong { color: var(--tr-orange); }
-
-  /* Hero stat band */
-  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(18,48,21,0.10); border-radius: 12px; overflow: hidden; }
-  .hero-stat { background: var(--tr-white); padding: 28px 26px; position: relative; }
-  .hero-stat .label {
-    text-transform: uppercase; letter-spacing: .1em; font-size: 11px;
-    font-weight: 500; color: var(--tr-dark-gray); margin-bottom: 10px;
-  }
-  .hero-stat .value {
-    font-weight: 400; font-size: 40px; line-height: 1;
-    color: var(--tr-racing-green); letter-spacing: -.01em;
-  }
-  .hero-stat .value .unit { font-size: 18px; color: var(--tr-orange); margin-left: 4px; font-weight: 500; }
-  .hero-stat .delta { margin-top: 10px; font-size: 12px; color: var(--tr-dark-gray); }
-  @media (max-width: 900px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
-
-  /* Decorative waypoint */
-  .waypoint-bg {
-    position: absolute; right: -90px; top: 40px;
-    width: 360px; opacity: .25; pointer-events: none;
-    animation: drift 18s ease-in-out infinite;
-  }
-  @keyframes drift {
-    0%,100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-18px) rotate(6deg); }
-  }
-
-  /* ---------- Section base ---------- */
-  section { padding: 96px 0; position: relative; }
-  .section-head { margin-bottom: 48px; max-width: 820px; }
-  .section-eyebrow {
-    font-size: 12px; font-weight: 500; letter-spacing: .18em;
-    color: var(--tr-orange); text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .section-eyebrow .num {
-    display: inline-block; background: var(--tr-orange); color: var(--tr-white);
-    width: 26px; height: 26px; border-radius: 50%;
-    text-align: center; line-height: 26px; margin-right: 12px;
-    font-size: 12px;
-  }
-  .section-title {
-    font-size: clamp(32px, 4vw, 48px); line-height: 1.12; font-weight: 400;
-    color: var(--tr-graphite); margin: 0 0 16px; letter-spacing: -.01em;
-  }
-  .section-title em { color: var(--tr-orange); font-style: italic; font-weight: 500; }
-  .section-lede { font-size: 18px; color: var(--tr-dark-gray); font-weight: 300; line-height: 1.55; }
-
-  /* ---------- Reveal animation ---------- */
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
-  .reveal.is-visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: .08s; }
-  .reveal-delay-2 { transition-delay: .16s; }
-  .reveal-delay-3 { transition-delay: .24s; }
-  .reveal-delay-4 { transition-delay: .32s; }
-
-  /* ---------- BU distribution chart ---------- */
-  .dist-section { background: var(--tr-soft-gray); }
-  .bu-chart { display: flex; flex-direction: column; gap: 14px; }
-  .bu-row {
-    display: grid; grid-template-columns: 280px 1fr 130px 110px;
-    gap: 20px; align-items: center;
-    padding: 14px 20px; background: var(--tr-white);
-    border-radius: 6px; transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .bu-row:hover { transform: translateX(4px); box-shadow: 0 10px 30px rgba(18,48,21,0.08); }
-  .bu-name { font-weight: 500; font-size: 15px; color: var(--tr-racing-green); }
-  .bu-name small { display: block; font-weight: 400; font-size: 12px; color: var(--tr-dark-gray); margin-top: 2px; }
-  .bu-bar-track { height: 14px; background: rgba(18,48,21,0.06); border-radius: 8px; overflow: hidden; }
-  .bu-bar-fill {
-    height: 100%; width: 0;
-    background: linear-gradient(90deg, var(--tr-orange) 0%, #f15a1f 100%);
-    border-radius: 8px;
-    transition: width 1.6s cubic-bezier(.25,.1,.25,1);
-  }
-  .bu-row.is-active .bu-bar-fill { width: var(--w); }
-  .bu-row.tier-1 .bu-bar-fill { background: linear-gradient(90deg, var(--tr-orange) 0%, #b73600 100%); }
-  .bu-row.tier-2 .bu-bar-fill { background: linear-gradient(90deg, #d68b45 0%, #E9B045 100%); }
-  .bu-row.tier-3 .bu-bar-fill { background: linear-gradient(90deg, #4DB299 0%, #2d8b73 100%); }
-  .bu-row.tier-4 .bu-bar-fill { background: linear-gradient(90deg, #8aa490 0%, var(--tr-racing-green) 100%); }
-  .bu-value { font-size: 16px; font-weight: 500; color: var(--tr-graphite); text-align: right; }
-  .bu-pct { font-size: 14px; font-weight: 500; color: var(--tr-orange); text-align: right; font-variant-numeric: tabular-nums; }
-  .bu-signal {
-    font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 999px;
-    text-transform: uppercase; letter-spacing: .04em; white-space: nowrap;
-  }
-  .signal-stable { background: rgba(18,48,21,0.08); color: var(--tr-racing-green); }
-  .signal-up { background: rgba(214,64,0,0.10); color: var(--tr-orange); }
-  .signal-down { background: rgba(233,176,69,0.20); color: #a87410; }
-  .signal-stop { background: var(--tr-graphite); color: var(--tr-white); }
-  @media (max-width: 900px) {
-    .bu-row { grid-template-columns: 1fr; gap: 10px; }
-    .bu-value, .bu-pct { text-align: left; }
-  }
-
-  /* Region split */
-  .region-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-  .region-card { background: var(--tr-white); padding: 28px; border-radius: 8px; border-top: 4px solid var(--tr-orange); }
-  .region-card.alt { border-top-color: var(--tr-racing-green); }
-  .region-card .pct { font-size: 56px; font-weight: 400; line-height: 1; color: var(--tr-racing-green); letter-spacing: -.01em; }
-  .region-card.alt .pct { color: var(--tr-racing-green); }
-  .region-card .label { margin-top: 10px; font-weight: 500; font-size: 16px; color: var(--tr-orange); text-transform: uppercase; letter-spacing: .1em; }
-  .region-card .desc { margin-top: 14px; font-size: 14px; color: var(--tr-dark-gray); line-height: 1.5; }
-  @media (max-width: 768px) { .region-split { grid-template-columns: 1fr; } }
-
-  /* ---------- Pattern cards ---------- */
-  .patterns-section { background: var(--tr-racing-green); color: var(--tr-white); }
-  .patterns-section .section-title { color: var(--tr-white); }
-  .patterns-section .section-eyebrow { color: var(--tr-dark-gold); }
-  .patterns-section .section-lede { color: rgba(255,255,255,0.78); }
-  .patterns-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .pattern-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 10px;
-    padding: 32px 28px;
-    transition: transform .25s ease, background .25s ease, border-color .25s ease;
-    position: relative; overflow: hidden;
-  }
-  .pattern-card::before {
-    content:""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-    background: var(--tr-orange); transform: scaleY(0); transform-origin: top;
-    transition: transform .35s ease;
-  }
-  .pattern-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); }
-  .pattern-card:hover::before { transform: scaleY(1); }
-  .pattern-num {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--tr-orange); color: var(--tr-white);
-    font-weight: 500; font-size: 16px; margin-bottom: 16px;
-  }
-  .pattern-card h3 { font-size: 22px; font-weight: 500; margin: 0 0 14px; color: var(--tr-white); line-height: 1.25; }
-  .pattern-card p { color: rgba(255,255,255,0.82); font-size: 15px; line-height: 1.6; margin: 0 0 8px; font-weight: 300; }
-  .pattern-card strong { color: var(--tr-dark-gold); font-weight: 500; }
-  @media (max-width: 768px) { .patterns-grid { grid-template-columns: 1fr; } }
-
-  /* ---------- BU plan cards ---------- */
-  .plan-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-  .plan-card {
-    background: var(--tr-white);
-    border: 1px solid rgba(18,48,21,0.10);
-    border-radius: 10px;
-    padding: 36px 32px;
-    position: relative;
-    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  }
-  .plan-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(18,48,21,0.10); border-color: var(--tr-orange); }
-  .plan-rank {
-    position: absolute; top: -14px; left: 32px;
-    background: var(--tr-orange); color: var(--tr-white);
-    font-size: 12px; font-weight: 500; letter-spacing: .12em;
-    padding: 6px 14px; border-radius: 4px; text-transform: uppercase;
-  }
-  .plan-card h3 { font-size: 24px; font-weight: 500; color: var(--tr-graphite); margin: 6px 0 6px; }
-  .plan-spend { font-size: 14px; color: var(--tr-orange); font-weight: 500; margin-bottom: 22px; }
-  .plan-diag { font-size: 14px; color: var(--tr-dark-gray); line-height: 1.55; margin-bottom: 22px; }
-  .plan-funnel {
-    display: flex; height: 18px; border-radius: 10px; overflow: hidden;
-    margin-bottom: 22px; background: rgba(18,48,21,0.06);
-  }
-  .funnel-seg {
-    height: 100%; display: flex; align-items: center; justify-content: center;
-    color: var(--tr-white); font-size: 10px; font-weight: 500; letter-spacing: .04em;
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 1.2s cubic-bezier(.25,.1,.25,1);
-  }
-  .plan-card.is-visible .funnel-seg { transform: scaleX(1); }
-  .funnel-tofu { background: #4DB299; }
-  .funnel-mofu { background: var(--tr-dark-gold); }
-  .funnel-bofu { background: var(--tr-orange); }
-  .funnel-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--tr-dark-gray); margin-top: -10px; margin-bottom: 16px; font-weight: 500; }
-  .funnel-stack { display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px; }
-  .funnel-row-label {
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--tr-dark-gray);
-  }
-  .funnel-row-label .tag-now { background: rgba(18,48,21,0.08); color: var(--tr-racing-green); padding: 2px 8px; border-radius: 4px; }
-  .funnel-row-label .tag-rec { background: var(--tr-orange); color: var(--tr-white); padding: 2px 8px; border-radius: 4px; }
-  .funnel-row-label .nums { font-variant-numeric: tabular-nums; color: var(--tr-graphite); font-weight: 500; letter-spacing: 0; text-transform: none; }
-  .funnel-arrow {
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    font-size: 11px; color: var(--tr-orange); font-weight: 500;
-    padding: 4px 0; letter-spacing: .04em;
-  }
-  .funnel-arrow svg { width: 12px; height: 12px; }
-  .funnel-shift-note {
-    background: rgba(214,64,0,0.06); padding: 8px 12px; border-radius: 4px;
-    font-size: 12px; line-height: 1.4; color: var(--tr-graphite);
-    border-left: 3px solid var(--tr-orange); margin-bottom: 18px;
-  }
-  .funnel-shift-note strong { color: var(--tr-orange); }
-  .plan-moves { display: flex; flex-direction: column; gap: 8px; }
-  .plan-move {
-    display: flex; gap: 12px; align-items: flex-start;
-    padding: 10px 14px; border-radius: 6px;
-    background: var(--tr-soft-gray);
-    font-size: 13px; line-height: 1.5;
-  }
-  .plan-move .ico {
-    flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
-    background: var(--tr-orange); color: var(--tr-white);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 700; margin-top: 1px;
-  }
-  .plan-move.do .ico { background: var(--tr-orange); }
-  .plan-move.dont .ico { background: var(--tr-graphite); }
-  .plan-move strong { color: var(--tr-graphite); }
-  @media (max-width: 900px) { .plan-grid { grid-template-columns: 1fr; } }
-
-  /* ---------- Channel matrix per BU ---------- */
-  .channel-section { background: var(--tr-white); }
-  .channel-intro {
-    background: var(--tr-soft-gray); border-radius: 10px;
-    padding: 24px 28px; margin-bottom: 48px;
-    border-left: 4px solid var(--tr-orange);
-    display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
-  }
-  .channel-intro .legend { display: flex; gap: 14px; flex-wrap: wrap; }
-  .channel-legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--tr-graphite); font-weight: 500; }
-  .channel-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .channel-intro .lede { font-size: 14px; color: var(--tr-dark-gray); line-height: 1.5; }
-  @media (max-width: 768px) { .channel-intro { grid-template-columns: 1fr; } }
-
-  .channel-bu {
-    border: 1px solid rgba(18,48,21,0.10); border-radius: 10px;
-    margin-bottom: 22px; overflow: hidden;
-    transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
-  }
-  .channel-bu:hover { box-shadow: 0 18px 40px -16px rgba(18,48,21,0.16); border-color: rgba(214,64,0,0.35); }
-  .channel-bu-head {
-    background: var(--tr-racing-green); color: var(--tr-white);
-    padding: 18px 26px;
-    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  }
-  .channel-bu-head h3 { margin: 0; font-size: 18px; font-weight: 500; color: var(--tr-white); }
-  .channel-bu-head h3 .rank { color: var(--tr-dark-gold); margin-right: 10px; font-variant-numeric: tabular-nums; }
-  .channel-bu-head .stat { font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 500; letter-spacing: .05em; }
-  .channel-bu-head .stat strong { color: var(--tr-white); font-weight: 500; }
-
-  .channel-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    background: rgba(18,48,21,0.08);
-    gap: 1px;
-  }
-  .channel-col { background: var(--tr-white); padding: 18px 18px 20px; }
-  .channel-col-head {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 11px; font-weight: 500;
-    text-transform: uppercase; letter-spacing: .1em;
-    margin-bottom: 12px;
-  }
-  .channel-col-head .badge {
-    width: 22px; height: 22px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--tr-white); font-size: 13px; font-weight: 700;
-    line-height: 1;
-  }
-  .col-ativar  .channel-col-head { color: var(--tr-orange); }
-  .col-ativar  .channel-col-head .badge { background: var(--tr-orange); }
-  .col-escalar .channel-col-head { color: #2d8b73; }
-  .col-escalar .channel-col-head .badge { background: #4DB299; }
-  .col-manter  .channel-col-head { color: var(--tr-racing-green); }
-  .col-manter  .channel-col-head .badge { background: var(--tr-racing-green); }
-  .col-pausar  .channel-col-head { color: #a87410; }
-  .col-pausar  .channel-col-head .badge { background: #E9B045; color: var(--tr-graphite); }
-
-  .channel-chips { display: flex; flex-direction: column; gap: 6px; }
-  .channel-chip {
-    font-size: 12.5px; line-height: 1.4; padding: 8px 10px;
-    background: var(--tr-soft-gray); border-radius: 5px;
-    color: var(--tr-graphite);
-    border-left: 2px solid transparent;
-    transition: transform .15s ease, background .15s ease;
-  }
-  .channel-chip:hover { transform: translateX(2px); }
-  .col-ativar  .channel-chip { border-left-color: var(--tr-orange); }
-  .col-ativar  .channel-chip:hover { background: rgba(214,64,0,0.08); }
-  .col-escalar .channel-chip { border-left-color: #4DB299; }
-  .col-escalar .channel-chip:hover { background: rgba(77,178,153,0.10); }
-  .col-manter  .channel-chip { border-left-color: var(--tr-racing-green); }
-  .col-manter  .channel-chip:hover { background: rgba(18,48,21,0.06); }
-  .col-pausar  .channel-chip { border-left-color: #E9B045; }
-  .col-pausar  .channel-chip:hover { background: rgba(233,176,69,0.12); }
-  .channel-chip strong { font-weight: 500; color: var(--tr-racing-green); }
-  .channel-chip .v { display: block; font-size: 11px; color: var(--tr-orange); margin-top: 2px; font-weight: 500; }
-  .channel-chip.empty { color: #999; font-style: italic; background: transparent; border-left-style: dashed; }
-
-  /* Funnel stage tags inside chips */
-  .stage {
-    display: inline-block;
-    font-size: 9.5px; font-weight: 700;
-    letter-spacing: .08em; text-transform: uppercase;
-    padding: 2px 6px; border-radius: 3px;
-    margin-right: 7px;
-    line-height: 1.2;
-    vertical-align: 2px;
-    font-variant-numeric: tabular-nums;
-  }
-  .stage-tofu { background: #E3F3EE; color: #1e6e5d; }
-  .stage-mofu { background: #FCF2DA; color: #8a5c14; }
-  .stage-bofu { background: rgba(214,64,0,0.12); color: var(--tr-orange); }
-  .stage-full { background: rgba(18,48,21,0.10); color: var(--tr-racing-green); }
-  .stage-mix  { background: linear-gradient(90deg, #FCF2DA 50%, rgba(214,64,0,0.12) 50%); color: var(--tr-graphite); }
-  .stage-tm   { background: linear-gradient(90deg, #E3F3EE 50%, #FCF2DA 50%); color: var(--tr-graphite); }
-  .stage-na   { background: rgba(0,0,0,0.05); color: #888; }
-
-  @media (max-width: 900px) {
-    .channel-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 560px) {
-    .channel-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ---------- Cross-cutting moves ---------- */
-  .cross-section { background: var(--tr-soft-gray); }
-  .cross-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .cross-card {
-    background: var(--tr-white); border-radius: 10px;
-    padding: 32px 28px;
-    border-top: 4px solid var(--tr-orange);
-    transition: transform .25s ease, box-shadow .25s ease;
-  }
-  .cross-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(18,48,21,0.10); }
-  .cross-card h3 { font-size: 18px; font-weight: 500; color: var(--tr-graphite); margin: 14px 0 12px; }
-  .cross-card .num-large {
-    font-size: 56px; font-weight: 200; line-height: 1;
-    color: var(--tr-orange); letter-spacing: -.02em;
-    font-family: var(--tr-font);
-  }
-  .cross-card p { font-size: 14px; line-height: 1.55; color: var(--tr-dark-gray); margin: 0; }
-  @media (max-width: 900px) { .cross-grid { grid-template-columns: 1fr; } }
-
-  /* ABM Table */
-  .abm-table {
-    margin-top: 56px; background: var(--tr-white); border-radius: 10px; overflow: hidden;
-    border: 1px solid rgba(18,48,21,0.08);
-  }
-  .abm-table table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  .abm-table thead { background: var(--tr-racing-green); color: var(--tr-white); }
-  .abm-table th { padding: 16px 22px; text-align: left; font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
-  .abm-table th:last-child { text-align: right; }
-  .abm-table td { padding: 14px 22px; border-bottom: 1px solid rgba(18,48,21,0.06); vertical-align: middle; }
-  .abm-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; color: var(--tr-orange); }
-  .abm-table tbody tr { transition: background .15s ease; }
-  .abm-table tbody tr:hover { background: var(--tr-soft-gray); }
-  .abm-tag { display: inline-block; font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 4px; background: rgba(214,64,0,0.10); color: var(--tr-orange); margin-right: 6px; text-transform: uppercase; letter-spacing: .04em; }
-  .abm-tag.legal { background: rgba(77,178,153,0.18); color: #2d8b73; }
-  .abm-tag.corp  { background: rgba(8,116,227,0.12); color: var(--tr-dark-sky, #0874E3); }
-  .abm-tag.tax   { background: rgba(214,64,0,0.10); color: var(--tr-orange); }
-  .abm-total td { background: var(--tr-racing-green); color: var(--tr-white); font-weight: 500; font-size: 15px; }
-  .abm-total td:last-child { color: var(--tr-dark-gold); }
-
-  /* ---------- Timeline ---------- */
-  .timeline-section { background: var(--tr-white); position: relative; overflow: hidden; }
-  .timeline {
-    position: relative; margin-top: 64px; padding-left: 60px;
-  }
-  .timeline::before {
-    content:""; position: absolute; left: 19px; top: 8px; bottom: 8px;
-    width: 2px; background: rgba(18,48,21,0.15);
-  }
-  .timeline-progress {
-    position: absolute; left: 19px; top: 8px; width: 2px;
-    background: var(--tr-orange);
-    height: 0%; transition: height 1.6s cubic-bezier(.25,.1,.25,1);
-  }
-  .tl-month {
-    position: relative; padding-bottom: 56px;
-  }
-  .tl-month::before {
-    content:""; position: absolute; left: -49px; top: 8px;
-    width: 20px; height: 20px; border-radius: 50%;
-    background: var(--tr-white);
-    border: 3px solid var(--tr-orange);
-    transition: transform .3s ease, background .3s ease;
-  }
-  .tl-month.is-visible::before { background: var(--tr-orange); transform: scale(1.15); }
-  .tl-month h3 {
-    font-size: 28px; font-weight: 500; color: var(--tr-graphite); margin: 0 0 6px;
-  }
-  .tl-month h3 .week { color: var(--tr-orange); font-weight: 400; font-size: 18px; margin-left: 12px; }
-  .tl-month .tl-sub { font-size: 14px; color: var(--tr-dark-gray); font-weight: 500; margin-bottom: 18px; text-transform: uppercase; letter-spacing: .08em; }
-  .tl-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
-  .tl-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; background: var(--tr-soft-gray); border-radius: 6px; font-size: 14px; line-height: 1.5; transition: background .2s ease, transform .2s ease; }
-  .tl-item:hover { background: rgba(214,64,0,0.06); transform: translateX(2px); }
-  .tl-item .tick {
-    flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%;
-    border: 2px solid var(--tr-orange); margin-top: 1px; position: relative;
-  }
-  .tl-item .tick::after {
-    content:""; position: absolute; left: 3px; top: 0px; width: 6px; height: 10px;
-    border: solid var(--tr-orange); border-width: 0 2px 2px 0;
-    transform: rotate(45deg) scale(0); transition: transform .25s ease .1s;
-  }
-  .tl-month.is-visible .tl-item .tick::after { transform: rotate(45deg) scale(1); }
-  @media (max-width: 768px) { .tl-list { grid-template-columns: 1fr; } }
-
-  /* expectations */
-  .expectations {
-    margin-top: 80px; background: var(--tr-racing-green); color: var(--tr-white);
-    border-radius: 12px; padding: 48px 40px;
-    background-image: radial-gradient(700px 280px at 100% 0%, rgba(214,64,0,0.18), transparent 60%);
-  }
-  .expectations h3 { color: var(--tr-white); font-size: 28px; font-weight: 400; margin: 0 0 32px; }
-  .exp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
-  .exp-item { border-left: 3px solid var(--tr-orange); padding-left: 18px; }
-  .exp-item .v {
-    font-size: 38px; font-weight: 300; line-height: 1;
-    color: var(--tr-white); letter-spacing: -.01em; margin-bottom: 8px;
-  }
-  .exp-item .v .pos { color: var(--tr-dark-gold); }
-  .exp-item .l { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,0.7); }
-  @media (max-width: 900px) { .exp-grid { grid-template-columns: repeat(2,1fr); } }
-
-  .risk-note {
-    margin-top: 32px; padding: 22px 24px;
-    background: rgba(214,64,0,0.10);
-    border-left: 4px solid var(--tr-orange);
-    border-radius: 6px;
-  }
-  .risk-note strong { color: var(--tr-white); font-weight: 500; }
-  .risk-note span { color: var(--tr-dark-gold); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; display: block; margin-bottom: 8px; }
-  .risk-note p { color: rgba(255,255,255,0.88); margin: 0; font-size: 15px; line-height: 1.55; }
-
-  /* ---------- Budget table ---------- */
-  .budget-section { background: var(--tr-soft-gray); }
-  .budget-table {
-    background: var(--tr-white); border-radius: 10px; overflow: hidden;
-    border: 1px solid rgba(18,48,21,0.08);
-    box-shadow: 0 30px 60px -30px rgba(18,48,21,0.18);
-  }
-  .budget-table table { width: 100%; border-collapse: collapse; }
-  .budget-table thead { background: var(--tr-racing-green); color: var(--tr-white); }
-  .budget-table th {
-    padding: 18px 20px; text-align: right; font-weight: 500;
-    font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
-  }
-  .budget-table th:first-child { text-align: left; }
-  .budget-table td { padding: 14px 20px; border-bottom: 1px solid rgba(18,48,21,0.06); font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
-  .budget-table td:first-child { text-align: left; font-weight: 500; color: var(--tr-racing-green); }
-  .budget-table tbody tr { transition: background .15s ease, transform .15s ease; }
-  .budget-table tbody tr:hover { background: var(--tr-soft-gray); }
-  .delta-pos { color: var(--tr-orange); font-weight: 500; }
-  .delta-neutral { color: var(--tr-dark-gray); }
-  .budget-table tfoot td {
-    background: var(--tr-racing-green); color: var(--tr-white);
-    font-weight: 500; font-size: 15px; border-bottom: none;
-  }
-  .budget-table tfoot td:last-child { color: var(--tr-dark-gold); }
-
-  .budget-foot-note {
-    margin-top: 28px; padding: 22px 26px;
-    background: var(--tr-white); border-radius: 8px;
-    font-size: 14px; line-height: 1.6; color: var(--tr-dark-gray);
-    border-left: 3px solid var(--tr-orange);
-  }
-
-  /* ---------- Footer ---------- */
-  .footer-section {
-    background: var(--tr-graphite); color: var(--tr-white);
-    padding: 64px 0 48px;
-  }
-  .footer-section .page { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; }
-  .footer-section h3 { color: var(--tr-white); font-size: 22px; font-weight: 400; margin: 0 0 12px; max-width: 540px; }
-  .footer-section p { color: rgba(255,255,255,0.6); font-size: 14px; margin: 0; max-width: 540px; }
-  .footer-section img { height: 56px; }
-
-  /* count-up util */
-  .countup { font-variant-numeric: tabular-nums; }
-
-  /* Print niceties */
-  @media print {
-    .topnav, .waypoint-bg { display: none; }
-    section { padding: 32px 0; page-break-inside: avoid; }
-  }
-</style>
+<link rel="stylesheet" href="assets/site.css" />
 </head>
-<body>
+<body data-page="home">
 
-<!-- ====================== TOP NAV ====================== -->
-<header class="topnav">
-  <div class="topnav-inner">
-    <img src="assets/logo/tr_pri_logo_rgb_color.svg" alt="Thomson Reuters" />
-    <nav>
-      <a href="#diagnostico">Diagnóstico</a>
-      <a href="#padroes">Padrões</a>
-      <a href="#plano-bu">Plano por BU</a>
-      <a href="#canais">Canais por BU</a>
-      <a href="#cruzados">Movimentos</a>
-      <a href="#90dias">90 dias</a>
-      <a href="#budget">Budget</a>
-    </nav>
-  </div>
-  <div class="progress-bar" id="progress"></div>
-</header>
+<a href="#main" class="skip">Pular para o conteúdo</a>
+<header class="topnav" id="site-nav"></header>
+
+<main id="main">
 
 <!-- ====================== HERO ====================== -->
 <section class="hero">
   <img src="assets/waypoints/r_waypt_12_RGB_orange.svg" class="waypoint-bg" alt="" aria-hidden="true" />
   <div class="page">
     <div class="hero-eyebrow reveal">Paid media · LatAm 2026 YTD</div>
-    <h1 class="reveal">Diagnóstico, relações <span class="accent">invisíveis</span> e plano por business unit.</h1>
+    <h1 class="reveal">Resumo executivo, padrões <span class="accent">e o plano</span> por business unit.</h1>
     <p class="hero-sub reveal reveal-delay-1">
-      Onde o portfólio de paid media está concentrado, o que está acelerando, o que parou
-      sem aviso e o que precisa mudar nos próximos 90 dias. Análise consolidada Jan 1 a 25 Mai 2026.
+      Diagnóstico consolidado Jan 1 – 25 Mai 2026. Esta página traz a visão LatAm — distribuição,
+      padrões cruzados, funil e canais agregados. Cada business unit tem uma página própria com
+      diagnóstico, recomendações e movimentos específicos.
     </p>
     <div class="meta-pills reveal reveal-delay-2">
       <div class="meta-pill">Período · <strong>Jan 1 – 25 Mai 2026</strong></div>
-      <div class="meta-pill">13 business units</div>
+      <div class="meta-pill">12 business units com plano dedicado</div>
       <div class="meta-pill">Brasil + Hispanic LatAm</div>
       <div class="meta-pill">Fonte · <strong>Breakdown oficial de campanhas</strong></div>
     </div>
 
     <div class="hero-stats reveal reveal-delay-3">
       <div class="hero-stat">
-        <div class="label">YTD spend</div>
+        <div class="label">Gasto YTD de mídia</div>
         <div class="value">US$ <span class="countup" data-target="875.7" data-decimals="1">0</span><span class="unit">K</span></div>
         <div class="delta">Jan 1 → 25 Mai 2026</div>
       </div>
       <div class="hero-stat">
-        <div class="label">Spend de maio</div>
+        <div class="label">Gasto em maio</div>
         <div class="value">US$ <span class="countup" data-target="138.7" data-decimals="1">0</span><span class="unit">K</span></div>
-        <div class="delta">Run-rate ~US$ 1,66M / ano</div>
+        <div class="delta">Maior mês do ano até aqui</div>
       </div>
       <div class="hero-stat">
-        <div class="label">Top 3 BUs</div>
+        <div class="label">Top 3 BUs concentram</div>
         <div class="value"><span class="countup" data-target="57.7" data-decimals="1">0</span><span class="unit">%</span></div>
-        <div class="delta">do portfólio total</div>
+        <div class="delta">Dominio + Legal PRO + Corp TAX</div>
       </div>
       <div class="hero-stat">
         <div class="label">Brasil vs Hispanic</div>
@@ -615,1317 +58,450 @@
   </div>
 </section>
 
-<!-- ====================== 1. DIAGNÓSTICO ====================== -->
-<section id="diagnostico" class="dist-section">
+<!-- ====================== 1. DISTRIBUIÇÃO (TREEMAP) ====================== -->
+<section id="distribuicao" class="section--gray">
   <div class="page">
     <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="num">1</span>Diagnóstico executivo</div>
-      <h2 class="section-title">A distribuição real <em>por business unit</em>.</h2>
-      <p class="section-lede">Decisão sobre 3 BUs move 60% do portfólio. O playbook precisa ser dual-region — não pode ser "um plano LatAm".</p>
+      <div class="section-eyebrow"><span class="num">1</span>Distribuição do budget de mídia por BU</div>
+      <h2 class="section-title">Onde o investimento <em>está alocado.</em></h2>
+      <p class="section-lede">
+        Cada retângulo representa o peso da BU no gasto YTD de mídia. Tamanho = participação no total.
+        Cor indica o tier de gasto. Clique para entrar no plano detalhado de cada BU.
+      </p>
     </div>
 
-    <div class="bu-chart" id="buChart">
-      <div class="bu-row tier-1 reveal" style="--w: 100%;">
-        <div class="bu-name">Tax Brazil Dominio<small>Tax SMB · Brazil</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 205,9K</div>
-        <div class="bu-pct">23,5%</div>
+    <!-- Treemap rows arranged by tier; flex-grow proportional to share -->
+    <div class="treemap">
+      <!-- Tier XL (>15%): Top 3 -->
+      <div class="treemap-row" style="min-height: 180px;">
+        <a class="treemap-tile tier-xl" href="bus/dominio.html" data-idx="0" style="flex-grow: 235;">
+          <span class="tile-region">BR</span>
+          <div>
+            <div class="name">Tax Brazil Dominio</div>
+            <div class="meta">Tax SMB · Brasil</div>
+          </div>
+          <div>
+            <div class="value">US$ 205,9K</div>
+            <div class="pct">23,5% do total</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-xl" href="bus/legal-br-pro.html" data-idx="1" style="flex-grow: 185;">
+          <span class="tile-region">BR</span>
+          <div>
+            <div class="name">Legal Brazil PRO</div>
+            <div class="meta">Legal-One · Pronto-Pronto · HighQ · CoCounsel · Large</div>
+          </div>
+          <div>
+            <div class="value">US$ 162,2K</div>
+            <div class="pct">18,5% do total</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-l" href="bus/corp-br-tax.html" data-idx="2" style="flex-grow: 157;">
+          <span class="tile-region">BR</span>
+          <div>
+            <div class="name">Corp Brazil TAX</div>
+            <div class="meta">ONESOURCE Tax-One · Reforma Tributária</div>
+          </div>
+          <div>
+            <div class="value">US$ 137,9K</div>
+            <div class="pct">15,7% do total</div>
+          </div>
+        </a>
       </div>
-      <div class="bu-row tier-1 reveal" style="--w: 78.7%;">
-        <div class="bu-name">Legal Brazil PRO<small>Legal-One, Pronto-Pronto, HighQ, CoCounsel, Large</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 162,2K</div>
-        <div class="bu-pct">18,5%</div>
+
+      <!-- Tier L/M (5-10%): mid tier -->
+      <div class="treemap-row" style="min-height: 150px;">
+        <a class="treemap-tile tier-m" href="bus/bejerman.html" data-idx="3" style="flex-grow: 91;">
+          <span class="tile-region">AR</span>
+          <div>
+            <div class="name">Tax AR · Bejerman</div>
+            <div class="meta">ERP contábil</div>
+          </div>
+          <div>
+            <div class="value">US$ 80,1K</div>
+            <div class="pct">9,1%</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-m" href="bus/corp-br-gtm.html" data-idx="4" style="flex-grow: 75;">
+          <span class="tile-region">BR</span>
+          <div>
+            <div class="name">Corp BR GTM</div>
+            <div class="meta">ONESOURCE Global Trade</div>
+          </div>
+          <div>
+            <div class="value">US$ 65,3K</div>
+            <div class="pct">7,5%</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-m" href="bus/corp-br-legal.html" data-idx="5" style="flex-grow: 70;">
+          <span class="tile-region">BR</span>
+          <div>
+            <div class="name">Corp BR Legal Corp</div>
+            <div class="meta">Soluções Jurídicas</div>
+          </div>
+          <div>
+            <div class="value">US$ 61,2K</div>
+            <div class="pct">7,0%</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-m" href="bus/onvio.html" data-idx="6" style="flex-grow: 64;">
+          <span class="tile-region">AR</span>
+          <div>
+            <div class="name">Tax AR · Onvio</div>
+            <div class="meta">SaaS contábil</div>
+          </div>
+          <div>
+            <div class="value">US$ 55,7K</div>
+            <div class="pct">6,4%</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-m" href="bus/legal-ar.html" data-idx="7" style="flex-grow: 54;">
+          <span class="tile-region">AR</span>
+          <div>
+            <div class="name">Legal Argentina</div>
+            <div class="meta">Westlaw · La Ley · Legal-One</div>
+          </div>
+          <div>
+            <div class="value">US$ 47,4K</div>
+            <div class="pct">5,4%</div>
+          </div>
+        </a>
       </div>
-      <div class="bu-row tier-1 reveal" style="--w: 67.0%;">
-        <div class="bu-name">Corp Brazil TAX<small>ONESOURCE Tax-One · Reforma Tributária</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 137,9K</div>
-        <div class="bu-pct">15,7%</div>
+
+      <!-- Tier S (1-5%) -->
+      <div class="treemap-row" style="min-height: 120px;">
+        <a class="treemap-tile tier-s" href="bus/tax-cl.html" data-idx="8" style="flex-grow: 30;">
+          <span class="tile-region">CL</span>
+          <div>
+            <div class="name">Tax Chile</div>
+            <div class="meta">Hyperrenta · Soluciones</div>
+          </div>
+          <div>
+            <div class="value">US$ 26,1K</div>
+            <div class="pct">3,0%</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-s" href="bus/institucional.html" data-idx="9" style="flex-grow: 18;">
+          <span class="tile-region">LatAm</span>
+          <div>
+            <div class="name">Institucional</div>
+            <div class="meta">Brand pressure cross-BU</div>
+          </div>
+          <div>
+            <div class="value">US$ 16,1K</div>
+            <div class="pct">1,8%</div>
+          </div>
+        </a>
+        <a class="treemap-tile tier-s" href="bus/legal-cl.html" data-idx="10" style="flex-grow: 17;">
+          <span class="tile-region">CL</span>
+          <div>
+            <div class="name">Legal Chile</div>
+            <div class="meta">Westlaw · CoCounsel</div>
+          </div>
+          <div>
+            <div class="value">US$ 15,1K</div>
+            <div class="pct">1,7%</div>
+          </div>
+        </a>
       </div>
-      <div class="bu-row tier-2 reveal" style="--w: 38.9%;">
-        <div class="bu-name">Tax Argentina ERP<small>Bejerman</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 80,1K</div>
-        <div class="bu-pct">9,1%</div>
-      </div>
-      <div class="bu-row tier-2 reveal" style="--w: 31.7%;">
-        <div class="bu-name">Corp Brazil GTM<small>ONESOURCE Global Trade</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 65,3K</div>
-        <div class="bu-pct">7,5%</div>
-      </div>
-      <div class="bu-row tier-2 reveal" style="--w: 29.7%;">
-        <div class="bu-name">Corp Brazil Legal Corp<small>Soluções Jurídicas Corporativas</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 61,2K</div>
-        <div class="bu-pct">7,0%</div>
-      </div>
-      <div class="bu-row tier-2 reveal" style="--w: 27.1%;">
-        <div class="bu-name">Tax Argentina SaaS<small>Onvio</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 55,7K</div>
-        <div class="bu-pct">6,4%</div>
-      </div>
-      <div class="bu-row tier-3 reveal" style="--w: 23.0%;">
-        <div class="bu-name">Legal Argentina<small>Westlaw · La Ley · Legal-One</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 47,4K</div>
-        <div class="bu-pct">5,4%</div>
-      </div>
-      <div class="bu-row tier-3 reveal" style="--w: 12.7%;">
-        <div class="bu-name">Tax Chile<small>Hyperrenta · Soluciones Contables</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 26,1K</div>
-        <div class="bu-pct">3,0%</div>
-      </div>
-      <div class="bu-row tier-3 reveal" style="--w: 7.8%;">
-        <div class="bu-name">Institucional<small>Brand pressure cross-BU</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 16,1K</div>
-        <div class="bu-pct">1,8%</div>
-      </div>
-      <div class="bu-row tier-3 reveal" style="--w: 7.3%;">
-        <div class="bu-name">Legal Chile<small>Westlaw · CoCounsel</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 15,1K</div>
-        <div class="bu-pct">1,7%</div>
-      </div>
-      <div class="bu-row tier-4 reveal" style="--w: 1.2%;">
-        <div class="bu-name">Legal Argentina KA<small>HighQ</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 1,5K</div>
-        <div class="bu-pct">0,2%</div>
-      </div>
-      <div class="bu-row tier-4 reveal" style="--w: 0.6%;">
-        <div class="bu-name">Brazil RH<small>Recruiting</small></div>
-        <div class="bu-bar-track"><div class="bu-bar-fill"></div></div>
-        <div class="bu-value">US$ 1,2K</div>
-        <div class="bu-pct">0,1%</div>
+
+      <!-- Tier XS (<1%) -->
+      <div class="treemap-row" style="min-height: 80px;">
+        <a class="treemap-tile tier-xs" href="bus/highq-ar.html" data-idx="11" style="flex-grow: 2;">
+          <span class="tile-region">AR</span>
+          <div>
+            <div class="name">Legal AR · HighQ KA</div>
+            <div class="meta">Sub-escala atual</div>
+          </div>
+          <div>
+            <div class="value">US$ 1,5K</div>
+            <div class="pct">0,2%</div>
+          </div>
+        </a>
+        <div class="treemap-tile tier-xs" data-idx="12" style="flex-grow: 1; cursor: default;">
+          <span class="tile-region">BR</span>
+          <div>
+            <div class="name">Brazil RH</div>
+            <div class="meta">Recrutamento operacional · fora do escopo growth</div>
+          </div>
+          <div>
+            <div class="value">US$ 1,2K</div>
+            <div class="pct">0,1%</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Region split -->
     <div class="region-split">
       <div class="region-card reveal">
         <div class="label">Brasil</div>
         <div class="pct"><span class="countup" data-target="69.7" data-decimals="1">0</span>%</div>
-        <div class="desc">US$ 615K · Dominio, Legal PRO e Corp TAX concentram a maior fatia. Playbook centrado em Reforma Tributária e LinkedIn ABM.</div>
+        <div class="desc">US$ 615K · Dominio, Legal PRO e Corp TAX concentram a maior fatia. Playbook centrado em Reforma Tributária e LinkedIn ABM enterprise.</div>
       </div>
       <div class="region-card alt reveal reveal-delay-1">
         <div class="label">Hispanic LatAm</div>
         <div class="pct"><span class="countup" data-target="28.4" data-decimals="1">0</span>%</div>
-        <div class="desc">US$ 251K · Bejerman e Onvio dominam Argentina. Chile sub-escala em construção de categoria. Janela para AI Legal.</div>
+        <div class="desc">US$ 251K · Bejerman e Onvio dominam Argentina. Chile sub-escala em construção de categoria. Janela para AI Legal regional.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====================== 2. PADRÕES INVISÍVEIS ====================== -->
-<section id="padroes" class="patterns-section">
+<!-- ====================== 2. PADRÕES ====================== -->
+<section id="padroes" class="section--green">
   <div class="page">
     <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="num">2</span>Relações invisíveis</div>
-      <h2 class="section-title">11 padrões que não aparecem <em>nos pivots.</em></h2>
-      <p class="section-lede">O que não vemos olhando um pivot por vez — leituras cruzadas entre BUs, canais e funil.</p>
+      <div class="section-eyebrow"><span class="num">2</span>Padrões cruzados · visão de portfólio</div>
+      <h2 class="section-title">12 leituras que <em>aparecem quando se conectam os pivots.</em></h2>
+      <p class="section-lede">Cada padrão é uma decisão a tomar — não uma crítica. A maioria reflete sinais positivos que merecem amplificação ou ajustes táticos. Termos técnicos têm definição no <a href="glossary.html" style="color: var(--tr-dark-gold); text-decoration: underline;">glossário</a>.</p>
     </div>
 
     <div class="patterns-grid">
       <div class="pattern-card reveal">
         <div class="pattern-num">01</div>
-        <h3>Institucional parou em maio sem aviso</h3>
-        <p>Rodou pesado em jan-fev (US$ 4K+/mês em ToFu Demand Gen + Video + LinkedIn Brand Awareness), caiu para US$ 5K em mar, <strong>US$ 0 em mai</strong>. Zero pressão de marca exatamente quando precisamos dela para sustentar o ciclo longo do enterprise.</p>
-        <p>O efeito não aparece no CPL imediato — aparece no CAC daqui a 6 meses, quando Brand Search começar a custar mais sem o efeito halo.</p>
+        <h3>Institucional precisa voltar ao ar</h3>
+        <p>Brand pressure rodou US$ 4K+/mês em jan-fev (Demand Gen + YouTube Video + LinkedIn Brand Awareness), caiu para US$ 5K em mar e <strong>foi a zero em mai</strong>.</p>
+        <p>O efeito não aparece no CPL imediato — aparece no CAC daqui a 3-6 meses, quando o Brand Search dos BUs (Dominio, Legal-One, ONESOURCE) começar a perder o efeito halo. Reativar agora é mais barato que recuperar mercado depois.</p>
       </div>
+
       <div class="pattern-card reveal reveal-delay-1">
         <div class="pattern-num">02</div>
-        <h3>Argentina inteira desacelerando</h3>
-        <p>Bejerman caiu de US$ 4,7K (abr) para US$ 1,9K (mai) em Search NonBrand. Onvio Search NonBrand caiu de US$ 3K para US$ 923. Pan-GTM (Tax CL) reduziu Hub Contenidos e HyperRenta.</p>
-        <p>Pode ser decisão (corte Q2), efeito sazonal pós-tax season AR, ou <strong>pause não documentado</strong>. Vale interrogar antes de assumir.</p>
+        <h3>Argentina · sinal de desaceleração em maio</h3>
+        <p>Bejerman caiu de US$ 4,7K (abr) → US$ 1,9K (mai) em Search NonBrand. Onvio NonBrand caiu de US$ 3K → US$ 923. Pan-GTM (Tax CL) reduziu Hub Contenidos e HyperRenta.</p>
+        <p>Pode ser <strong>decisão consciente</strong> (corte de Q2), <strong>efeito sazonal pós-tax season AR</strong>, ou pause não documentado. Vale uma conversa rápida com o time AR antes de planejar a recuperação.</p>
       </div>
+
       <div class="pattern-card reveal">
         <div class="pattern-num">03</div>
-        <h3>Dominio é o gargalo, não o motor</h3>
-        <p>23,5% do gasto. 90,5% em BoFu. Apenas 1,9% em ToFu (US$ 3,8K). O mecanismo de aquisição não está criando novos compradores in-market — está colhendo demanda que orgânico/eventos criaram.</p>
-        <p>O dia em que organic + Brand Search saturarem (provavelmente já), o <strong>CAC dispara</strong> e não há canal de demanda para socorrer.</p>
+        <h3>Dominio · proteger a liderança</h3>
+        <p>Dominio sustenta a maior fatia do faturamento LatAm e por isso concentra 23,5% do paid. O mix atual (90,5% BoFu) reflete que <strong>o paid está colhendo demanda criada por orgânico e marca</strong> — isso funciona enquanto a categoria está madura e a posição de marca é forte.</p>
+        <p>O movimento aqui é defensivo, não corretivo: <strong>adicionar uma camada de ToFu/MoFu</strong> protege o CAC se a concorrência apertar Brand Search nos próximos 12-24 meses. Investimento em reserva, não em mudança de estratégia.</p>
       </div>
+
       <div class="pattern-card reveal reveal-delay-1">
         <div class="pattern-num">04</div>
-        <h3>Legal Brazil PRO sem plano unificado</h3>
-        <p>5 produtos rodando paid com lógicas heterogêneas. Pronto-Pronto bem estruturado (Demand Gen + YouTube + LinkedIn + Meta). Legal-One = 95% Search. HighQ = Search puro. CoCounsel e Large lançando em maio com <strong>&lt;US$ 3K cada</strong>.</p>
-        <p>Sub-portfólio que merece tratamento separado — não é "um BU", são cinco produtos.</p>
+        <h3>Legal Brazil PRO · 5 produtos, 5 lógicas distintas</h3>
+        <p>Legal-One, Pronto-Pronto, HighQ, CoCounsel e Large rodam paid com playbooks heterogêneos. Pronto-Pronto tem mix completo (Demand Gen + YouTube + LinkedIn + Meta). Legal-One é majoritariamente Search. HighQ é 100% Search.</p>
+        <p>É um <strong>sub-portfólio</strong>, não um BU único. Tratar cada produto com plano próprio (e usar Pronto-Pronto como template) destrava performance.</p>
       </div>
+
       <div class="pattern-card reveal">
         <div class="pattern-num">05</div>
-        <h3>CoCounsel lançado em modo esconde-esconde</h3>
-        <p>Apareceu em maio. US$ 1,172 em Search NonBrand (BR), US$ 572 em Search Chile, US$ 822 em Facebook Chile. <strong>Total US$ 2,5K</strong> para lançar categoria nova de IA jurídica.</p>
-        <p>Para comparação, Legal-One Brand sozinho gastou US$ 41K YTD. Janela competitiva fechando — Harvey, Spellbook, Pia já existem no mercado.</p>
+        <h3>CoCounsel · escala de descoberta vs. janela competitiva</h3>
+        <p>O lançamento entrou em maio com US$ 2,5K total (Brasil + Chile · Search + Facebook). Faz sentido começar pequeno, mas <strong>a categoria de IA jurídica tem janela fechando rápido</strong> — Harvey, Spellbook e Pia já têm presença no mercado lusófono.</p>
+        <p>Decisão a tomar: subir CoCounsel para US$ 40-60K anualizado nos próximos 60 dias (60% ToFu+MoFu) ou aceitar a posição de fast follower.</p>
       </div>
+
       <div class="pattern-card reveal reveal-delay-1">
         <div class="pattern-num">06</div>
-        <h3>Large sendo lançado também sub-escala</h3>
-        <p>7 ad sets criados entre 4-6 de maio cobrindo PMax + YouTube + Demand Gen + LinkedIn (ToFu/MoFu/BoFu) — todos com gasto individual <strong>abaixo de US$ 250</strong>. Total &lt; US$ 1,2K.</p>
-        <p>É teste de cobertura de canal, não lançamento. Decisão: consolida em 2-3 ad sets com US$ 5-8K cada, ou pausa.</p>
+        <h3>Large · escala de teste insuficiente para diagnóstico</h3>
+        <p>7 ad sets criados entre 4-6 de maio (PMax + YouTube + Demand Gen + LinkedIn nos 3 estágios de funil), cada um com gasto individual abaixo de US$ 250. Total &lt; US$ 1,2K.</p>
+        <p>É <strong>cobertura de canal</strong>, não escala de aprendizado. Opções: consolidar em 2-3 ad sets com US$ 8-10K cada por 60 dias para gerar learning real, ou pausar e revisar o briefing.</p>
       </div>
+
       <div class="pattern-card reveal">
         <div class="pattern-num">07</div>
-        <h3>Reforma Tributária com duas estratégias competindo</h3>
-        <p><strong>DESCOMPLEXA</strong> = Demand Gen + LinkedIn Conv Web (US$ 14K total jan-mai). <strong>PESQUISA</strong> = LinkedIn ToFu, US$ 1K em abril.</p>
-        <p>Duas hipóteses de funil para o mesmo evento. Volume pequeno demais para comparação. <strong>Reforma Tributária é o evento de 2026</strong>. Não há espaço para hesitação.</p>
+        <h3>Reforma Tributária · duas hipóteses ainda em paralelo</h3>
+        <p><strong>DESCOMPLEXA</strong> (Demand Gen + LinkedIn Conv Web · ~US$ 14K) e <strong>PESQUISA</strong> (LinkedIn ToFu · US$ 1K em abril) são duas teorias diferentes sobre como capturar valor do evento de 2026.</p>
+        <p>Volume atual é pequeno para A/B test conclusivo. <strong>Reforma Tributária é o evento mais relevante do ano</strong>. Recomendação: rodar ambas com US$ 8K por 60 dias, decidir por conversão para SQL (não CPL).</p>
       </div>
+
       <div class="pattern-card reveal reveal-delay-1">
         <div class="pattern-num">08</div>
-        <h3>CLC é o melhor performer escondido</h3>
-        <p>Demand Gen Image cross-BU do Corp BR (GTM/TAX/LEGAL) rodou em jan-fev-mar com US$ 1-3K/mês cada. Em maio caiu para US$ 652-806.</p>
-        <p>5 meses contínuos e paralelos nos 3 BUs corporativos sugere que está funcionando. O <strong>acelerador foi desligado em maio sem motivo óbvio</strong>.</p>
+        <h3>CLC · campanha cross-BU que merece mais visibilidade</h3>
+        <p>O conjunto Demand Gen Image cross-BU do Corp BR (GTM/TAX/LEGAL) rodou de jan a mar com US$ 1-3K/mês cada e <strong>caiu para US$ 652-806 em maio</strong>.</p>
+        <p>5 meses contínuos e paralelos nos 3 BUs corporativos é sinal de que está funcionando. Vale entender por que o acelerador foi reduzido em maio — pode ter sido decisão ou efeito da redistribuição de budget.</p>
       </div>
+
       <div class="pattern-card reveal">
         <div class="pattern-num">09</div>
-        <h3>Legal Argentina sem ToFu</h3>
-        <p>US$ 47K em 51% MoFu + 49% BoFu. <strong>Zero em topo</strong>. Está vendendo La Ley/Legal-One/HighQ mas não educa o mercado.</p>
-        <p>Para Westlaw e CoCounsel chegarem ao Argentina, alguém precisa estar construindo categoria de jurisprudência online e AI legal. Hoje, ninguém está.</p>
+        <h3>Legal Argentina · zero ToFu no portfólio</h3>
+        <p>US$ 47K em 51% MoFu + 49% BoFu, sem camada de topo. <strong>Vendendo bem</strong> os produtos atuais (La Ley, Legal-One, HighQ), mas sem construir categoria.</p>
+        <p>Para Westlaw e CoCounsel terem caminho no AR, precisamos começar a educar mercado sobre jurisprudência online e AI legal. Hoje, ninguém está nessa frente — janela aberta.</p>
       </div>
+
       <div class="pattern-card reveal reveal-delay-1">
         <div class="pattern-num">10</div>
-        <h3>Tax e Legal Chile = 100% captura</h3>
-        <p>Tax CL US$ 26K, 95,7% BoFu. Legal CL US$ 15K, 100% BoFu. Dois mercados em modo "colhe o que tem" <strong>sem nenhuma construção</strong>.</p>
-        <p>Para Westlaw + Hyperrenta + Pan-GTM serem escaláveis no Chile, alguém precisa rodar Demand Gen + Thought Leader Ads no LinkedIn CL. Zero hoje.</p>
+        <h3>Chile · mercado em modo captura pura</h3>
+        <p>Tax CL US$ 26K com 95,7% BoFu. Legal CL US$ 15K com 100% BoFu. Os dois operam sem construção de categoria — colhem o que organic + marca já trouxeram.</p>
+        <p>É um padrão consistente com mercado em estágio inicial. Para Westlaw, Hyperrenta e Pan-GTM <strong>escalarem no CL</strong>, vale começar a investir em Demand Gen e LinkedIn Thought Leader localmente nos próximos meses.</p>
       </div>
+
       <div class="pattern-card reveal">
         <div class="pattern-num">11</div>
-        <h3>Pronto-Pronto é o template que ninguém replicou</h3>
-        <p>Roda em Google (Demand Gen + YouTube) + LinkedIn (Video + Image + Conv) + Meta (Image + Video) com cobertura ToFu/MoFu/BoFu completa. <strong>Único produto com mix completo</strong>.</p>
-        <p>Esse mix deveria ser o template para Dominio, Bejerman, Legal-One, ONESOURCE. Não está sendo replicado.</p>
+        <h3>Pronto-Pronto · a arquitetura mais completa do portfólio</h3>
+        <p>Único produto do portfólio com mix simultâneo de Google (Demand Gen + YouTube) + LinkedIn (Video + Image + Conversation) + Meta (Image + Video), cobrindo ToFu/MoFu/BoFu.</p>
+        <p>Essa estrutura é replicável e <strong>vale como template</strong> para Legal-One, Onvio e Bejerman — produtos com perfil de audiência parecido mas cobertura de funil mais estreita.</p>
       </div>
+
       <div class="pattern-card reveal reveal-delay-1">
         <div class="pattern-num">12</div>
-        <h3>Onvio Always On Meta sem revisão</h3>
-        <p>Total US$ 21,6K YTD (maior linha individual AR). Subiu de US$ 2,2K (jan) a US$ 6,5K (mar), caiu para US$ 3,7K (mai). Sem dado de qualidade do lead.</p>
-        <p>"Always On" em Meta sem revisão periódica de conversão é onde <strong>dinheiro mora invisível</strong>. Primeira linha a auditar.</p>
+        <h3>Onvio Always On Meta · maior linha individual sem review periódica</h3>
+        <p>US$ 21,6K YTD (maior linha individual AR). Subiu de US$ 2,2K (jan) → US$ 6,5K (mar) → caiu para US$ 3,7K (mai). Hoje não temos dado de qualidade do lead conectado a essa linha.</p>
+        <p>Antes de qualquer recomendação de escalar ou pausar, <strong>auditoria de pipeline</strong>. Se está gerando MQL→SQL, escalar. Se não, restruturar. Decisão deveria preceder o resto do plano Onvio.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====================== 3. PLANO POR BU ====================== -->
-<section id="plano-bu">
-  <div class="wide">
-    <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="num">3</span>Plano por business unit</div>
-      <h2 class="section-title">Funil recomendado, canais <em>e movimentos.</em></h2>
-      <p class="section-lede">Ordem decrescente de spend. Para cada BU: diagnóstico curto, comparação <strong>hoje vs recomendado</strong>, e movimentos específicos.</p>
-      <div class="funnel-shift-note" style="margin-top: 20px; max-width: 820px;">
-        <strong>Por que BoFu continua dominante?</strong> B2B SaaS captura mais demanda no fundo do que cria no topo — isso é estrutural. A leitura do MD não é inverter o funil, é <strong>parar de rodar 90% BoFu</strong> (onde nada está sendo criado) e construir uma base saudável de ToFu+MoFu que alimente o BoFu de amanhã. O alvo de 60% BoFu na maioria dos BUs é o que sustenta crescimento sem queimar CAC.
-      </div>
-    </div>
-
-    <div class="plan-grid">
-
-      <!-- 3.1 Dominio -->
-      <div class="plan-card reveal">
-        <div class="plan-rank">#01 · 23,5%</div>
-        <h3>Tax Brazil Dominio</h3>
-        <div class="plan-spend">US$ 205,9K YTD · Tax SMB Brazil</div>
-        <p class="plan-diag">Motor de captura saturado. 90,5% BoFu, 1,9% ToFu, Search Brand US$ 95K (54% do BoFu). A mudança mais drástica do portfólio.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">1,9 · 7,6 · 90,5%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 1.9%;"></div>
-            <div class="funnel-seg funnel-mofu" style="width: 7.6%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 90.5%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">15 · 25 · 60%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 15%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 25%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 60%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−30 pts BoFu</strong> · construir ToFu de US$ 4K para US$ 70K anualizado. Mudança mais drástica do portfólio.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Reels Meta + TikTok Spark Ads</strong> com talking-head de contador real (não vídeo polido)</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>YouTube In-Stream:</strong> "Reforma Tributária para o contador SMB" · hooks 15s</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Demand Gen Google</strong> com lookalike de clientes Dominio</div></div>
-          <div class="plan-move dont"><span class="ico">−</span><div><strong>Cap Brand Search</strong> — saturado. Aumentar daqui só queima dinheiro</div></div>
-          <div class="plan-move dont"><span class="ico">−</span><div><strong>Não usar LinkedIn</strong> — audiência errada para contador SMB</div></div>
-        </div>
-      </div>
-
-      <!-- 3.2 Legal PRO -->
-      <div class="plan-card reveal reveal-delay-1">
-        <div class="plan-rank">#02 · 18,5%</div>
-        <h3>Legal Brazil PRO</h3>
-        <div class="plan-spend">US$ 162,2K YTD · 5 produtos sob um teto</div>
-        <p class="plan-diag">Sub-portfólio heterogêneo. Pronto-Pronto bem estruturado, Legal-One captura pura, HighQ Search-only, CoCounsel/Large lançamento sub-escala.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">7 · 12 · 80,5% (blended)</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 7%;"></div>
-            <div class="funnel-seg funnel-mofu" style="width: 12%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 80.5%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">20 · 25 · 55%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 20%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 25%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 55%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−25 pts BoFu blended</strong> · cada produto com mix próprio. HighQ ABM puro, CoCounsel 60% topo + meio.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Legal-One:</strong> adicionar Demand Gen + Thought Leader Ads no LinkedIn (US$ 20K)</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>HighQ:</strong> LinkedIn ABM obrigatório · 200 escritórios 50+ advogados</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>CoCounsel:</strong> US$ 40-60K anualizado, 60% ToFu+MoFu — janela competitiva fechando</div></div>
-          <div class="plan-move dont"><span class="ico">−</span><div><strong>Large:</strong> consolidar dos 7 ad sets sub-escala para 3 com US$ 8-10K, ou pausar</div></div>
-        </div>
-      </div>
-
-      <!-- 3.3 Corp BR TAX -->
-      <div class="plan-card reveal">
-        <div class="plan-rank">#03 · 15,7%</div>
-        <h3>Corp Brazil TAX</h3>
-        <div class="plan-spend">US$ 137,9K YTD · ONESOURCE + Reforma Tributária</div>
-        <p class="plan-diag">Mix saudável estruturalmente (9,3 / 11,7 / 79%). Problema é escala da Reforma Tributária e duas estratégias paralelas no mesmo evento.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">9,3 · 11,7 · 79%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 9.3%;"></div>
-            <div class="funnel-seg funnel-mofu" style="width: 11.7%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 79%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">18 · 22 · 60%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 18%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 22%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 60%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−19 pts BoFu</strong> · ToFu quase dobra para alimentar Hub Reforma Tributária (US$ 100-130K anualizado).</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Hub Reforma Tributária US$ 80-100K anualizado</strong> · YouTube + LinkedIn Thought Leader + Demand Gen</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Decidir DESCOMPLEXA × PESQUISA</strong> · rodar ambas US$ 8K por 60 dias, decidir por SQL</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Document Ads "Playbook Reforma Tributária 2026"</strong> · checklist de readiness</div></div>
-          <div class="plan-move dont"><span class="ico">−</span><div><strong>Não ampliar Tax-One Brand Search</strong> — saturando</div></div>
-        </div>
-      </div>
-
-      <!-- 3.4 Bejerman -->
-      <div class="plan-card reveal reveal-delay-1">
-        <div class="plan-rank">#04 · 9,1%</div>
-        <h3>Tax Argentina ERP — Bejerman</h3>
-        <div class="plan-spend">US$ 80,1K YTD · Argentina</div>
-        <p class="plan-diag">Desacelerando em maio sem motivo aparente. Mix razoável. Meta com boa cobertura (US$ 15,7K MoFu Facebook Always On). <strong>Zero LinkedIn</strong>.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">4,3 · 15,4 · 80,3%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 4.3%;"></div>
-            <div class="funnel-seg funnel-mofu" style="width: 15.4%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 80.3%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">12 · 25 · 63%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 12%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 25%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 63%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−17 pts BoFu</strong> · LinkedIn ABM AR de zero a US$ 15-20K + YouTube AR de US$ 280 a US$ 10K.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn ABM Argentina</strong> US$ 15-20K · contadores mid-market + firmas 5+ contadores</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>YouTube In-Stream AR</strong> explainer de ERP · US$ 10K anualizado</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Reels Meta</strong> com talking-head de contador AR</div></div>
-          <div class="plan-move dont"><span class="ico">!</span><div><strong>Interrogar a desaceleração</strong> · decisão consciente ou pause não documentado?</div></div>
-        </div>
-      </div>
-
-      <!-- 3.5 Corp BR GTM -->
-      <div class="plan-card reveal">
-        <div class="plan-rank">#05 · 7,5%</div>
-        <h3>Corp Brazil GTM</h3>
-        <div class="plan-spend">US$ 65,3K YTD · ONESOURCE Global Trade</div>
-        <p class="plan-diag">Mix estrutural dos melhores (14,3 / 13,9 / 71,8%). LinkedIn ABM começou a aparecer mar-abr-mai. Tendência certa em escala ainda pequena.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">14,3 · 13,9 · 71,8%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 14.3%;"></div>
-            <div class="funnel-seg funnel-mofu" style="width: 13.9%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 71.8%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">18 · 22 · 60%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 18%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 22%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 60%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−12 pts BoFu</strong> · ajuste fino + LinkedIn ABM dobra para US$ 35-45K anualizado.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn ABM dobrar para US$ 35-45K</strong> · Top 1.500 exportadores BR</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Document Ads "Compliance fiscal internacional 2026"</strong></div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Conversation Ads</strong> "calcule sua economia tributária em 15 min"</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Thought Leader Ads</strong> com 1-2 SMEs internos</div></div>
-        </div>
-      </div>
-
-      <!-- 3.6 Legal Corp -->
-      <div class="plan-card reveal reveal-delay-1">
-        <div class="plan-rank">#06 · 7,0%</div>
-        <h3>Corp Brazil Legal Corp</h3>
-        <div class="plan-spend">US$ 61,2K YTD · Soluções Jurídicas Corporativas</div>
-        <p class="plan-diag">Quase exclusivamente Search NonBrand. Demand Gen ToFu via CLC_LEGAL faz bom papel. LinkedIn começa a aparecer. <strong>Gap é MoFu</strong>.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">15,5 · 7,1 · 77,4%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 15.5%;"></div>
-            <div class="funnel-seg funnel-mofu" style="width: 7.1%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 77.4%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">20 · 20 · 60%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 20%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 20%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 60%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−17 pts BoFu</strong> · MoFu quase triplica · Document Ads + Conversation Ads abrem a camada que falta.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn Document Ads "Guia de Operações Jurídicas Corporativas 2026"</strong> · US$ 15K</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn Conversation Ads</strong> · Demo Soluções Jurídicas · US$ 10K</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Demand Gen Google MoFu</strong> com vídeo de cases · US$ 8K</div></div>
-        </div>
-      </div>
-
-      <!-- 3.7 Onvio -->
-      <div class="plan-card reveal">
-        <div class="plan-rank">#07 · 6,4%</div>
-        <h3>Tax Argentina SaaS — Onvio</h3>
-        <div class="plan-spend">US$ 55,7K YTD · Argentina</div>
-        <p class="plan-diag">Desacelerando em maio. Always On Meta é a maior linha (US$ 21,7K) e precisa de auditoria — não dá pra confiar em campanha que ninguém revisa.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">10,9 · 18,0 · 71,1%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 10.9%;"></div>
-            <div class="funnel-seg funnel-mofu" style="width: 18%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 71.1%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">12 · 25 · 63%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 12%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 25%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 63%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>Ajuste fino · −8 pts BoFu</strong> · prioridade real é auditar Always On Meta antes de qualquer outra coisa.</div>
-        <div class="plan-moves">
-          <div class="plan-move dont"><span class="ico">!</span><div><strong>Ação #1 — Auditar Always On Onvio Meta</strong> · validar se gera pipeline ou só impressão</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn AR US$ 10-15K</strong> · contadores certificados + firmas mid-market</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Demand Gen Google</strong> escalar para US$ 8K anualizado</div></div>
-        </div>
-      </div>
-
-      <!-- 3.8 Legal AR -->
-      <div class="plan-card reveal reveal-delay-1">
-        <div class="plan-rank">#08 · 5,4%</div>
-        <h3>Legal Argentina</h3>
-        <div class="plan-spend">US$ 47,4K YTD · Westlaw · La Ley · Legal-One</div>
-        <p class="plan-diag">Zero ToFu. Faz 51% MoFu e 49% BoFu — está vendendo mas não educando. Meta com campanha Always On boa (US$ 15K YTD).</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">0 · 51 · 49%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-mofu" style="width: 51%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 49%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">15 · 45 · 40%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 15%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 45%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 40%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>MoFu dominante por design</strong> · único BU SaaS onde funil quase inverte. Construir categoria "AI Legal AR" é o trabalho.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Construir categoria "AI Legal Argentina"</strong> · janela antes de Harvey/Spellbook</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn Thought Leader Ads</strong> com SMEs de La Ley/Westlaw AR · US$ 10K</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>YouTube In-Stream AR</strong> · 3-5 min com lawyer AR explicando casos · US$ 6K</div></div>
-        </div>
-      </div>
-
-      <!-- 3.9 Tax CL -->
-      <div class="plan-card reveal">
-        <div class="plan-rank">#09 · 3,0%</div>
-        <h3>Tax Chile</h3>
-        <div class="plan-spend">US$ 26,1K YTD · Hyperrenta + Soluciones</div>
-        <p class="plan-diag">95,7% BoFu, 0% MoFu, 4,3% ToFu (via Hub Contenidos Facebook). Mercado pequeno mas estruturalmente pobre — só captura.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">4,3 · 0 · 95,7%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 4.3%;"></div>
-            <div class="funnel-seg funnel-bofu" style="width: 95.7%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">15 · 25 · 60%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 15%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 25%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 60%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−36 pts BoFu</strong> · MoFu sai do zero · ativar Demand Gen + LinkedIn CL para construir categoria local.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Demand Gen Google Chile</strong> · novo, US$ 5K anualizado</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Expandir Hub Contenidos Meta</strong> · de US$ 800 YTD para US$ 6K</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn Chile ABM</strong> · 300 firmas contábeis + 500 corporates · US$ 10K</div></div>
-        </div>
-      </div>
-
-      <!-- 3.10 Institucional -->
-      <div class="plan-card reveal reveal-delay-1">
-        <div class="plan-rank">#10 · 1,8%</div>
-        <h3>Institucional</h3>
-        <div class="plan-spend">US$ 16,1K YTD · Brand pressure cross-BU</div>
-        <p class="plan-diag">Parou em maio. Único BU com mix 100% ToFu+MoFu por design. Era pressão de marca para sustentar Brand Search dos demais BUs.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">58,7 · 41,3 · 0%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 58.7%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 41.3%;">MoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">60 · 40 · 0%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 60%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 40%;">MoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>Mix está certo — falta volume</strong> · de US$ 16K para US$ 50-70K anualizado. Reativar imediatamente.</div>
-        <div class="plan-moves">
-          <div class="plan-move dont"><span class="ico">!</span><div><strong>Ação imediata · reativar</strong> · brand desligada hoje = Brand Search mais caro em 3-6 meses</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Volume anualizado US$ 50-70K</strong> · Demand Gen + Video + LinkedIn Brand Awareness</div></div>
-        </div>
-      </div>
-
-      <!-- 3.11 Legal CL -->
-      <div class="plan-card reveal">
-        <div class="plan-rank">#11 · 1,7%</div>
-        <h3>Legal Chile</h3>
-        <div class="plan-spend">US$ 15,1K YTD · Westlaw + CoCounsel</div>
-        <p class="plan-diag">100% BoFu. Westlaw + CoCounsel sendo vendido sem nenhuma construção de categoria.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">0 · 0 · 100%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-bofu" style="width: 100%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">20 · 30 · 50%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 20%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 30%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 50%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>−50 pts BoFu</strong> · maior reorganização proporcional. ToFu+MoFu saem do zero · janela "AI Legal CL".</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Construir "AI Legal Chile"</strong> agora · CoCounsel já aparece em maio</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Escalar CoCounsel CL para US$ 15K anualizado</strong> focado em ToFu</div></div>
-        </div>
-      </div>
-
-      <!-- 3.12 HighQ AR -->
-      <div class="plan-card reveal reveal-delay-1">
-        <div class="plan-rank">#12 · 0,2%</div>
-        <h3>Legal Argentina KA — HighQ</h3>
-        <div class="plan-spend">US$ 1,5K YTD · Sub-escala</div>
-        <p class="plan-diag">Audiência pequena mas valiosa: escritórios grandes Argentina. Recomendação: ABM puro no LinkedIn.</p>
-        <div class="funnel-stack">
-          <div class="funnel-row-label"><span class="tag-now">Hoje</span><span class="nums">0 · 0 · 100%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-bofu" style="width: 100%;">BoFu</div>
-          </div>
-          <div class="funnel-row-label"><span class="tag-rec">Recomendado</span><span class="nums">10 · 40 · 50%</span></div>
-          <div class="plan-funnel">
-            <div class="funnel-seg funnel-tofu" style="width: 10%;">ToFu</div>
-            <div class="funnel-seg funnel-mofu" style="width: 40%;">MoFu</div>
-            <div class="funnel-seg funnel-bofu" style="width: 50%;">BoFu</div>
-          </div>
-        </div>
-        <div class="funnel-shift-note"><strong>De US$ 1,5K para US$ 10-12K anualizado</strong> · MoFu dominante via Document Ads. Sub-escala atual não é mensurável.</div>
-        <div class="plan-moves">
-          <div class="plan-move do"><span class="ico">+</span><div><strong>LinkedIn ABM puro</strong> · 80-100 escritórios AR 50+ advogados</div></div>
-          <div class="plan-move do"><span class="ico">+</span><div><strong>Document Ads + Conversation Ads</strong> · US$ 10-12K anualizado</div></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ====================== 4. CHANNEL MIX POR BU ====================== -->
-<section id="canais" class="channel-section">
-  <div class="wide">
-    <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="num">4</span>Channel mix por business unit</div>
-      <h2 class="section-title">O que <em>ativar, escalar, manter</em> e pausar.</h2>
-      <p class="section-lede">Decisão por canal e produto. Em ordem decrescente de spend YTD. Funil dominante continua sendo BoFu na maioria — mas com 60% e não 90%, e com ToFu/MoFu efetivamente alimentando o pipeline em vez de ficarem zerados.</p>
-    </div>
-
-    <div class="channel-intro reveal">
-      <div class="legend">
-        <div class="channel-legend-item"><span class="channel-legend-dot" style="background: var(--tr-orange);"></span>Ativar</div>
-        <div class="channel-legend-item"><span class="channel-legend-dot" style="background: #4DB299;"></span>Escalar</div>
-        <div class="channel-legend-item"><span class="channel-legend-dot" style="background: var(--tr-racing-green);"></span>Manter</div>
-        <div class="channel-legend-item"><span class="channel-legend-dot" style="background: #E9B045;"></span>Pausar / capar</div>
-      </div>
-      <p class="lede">"Ativar" = canal novo. "Escalar" = canal existente que precisa de mais budget. "Manter" = está no nível certo. "Pausar / capar" = parar, limitar ou auditar antes de aumentar. Cada ação traz a etapa de funil que atinge: <span class="stage stage-tofu">ToFu</span> <span class="stage stage-mofu">MoFu</span> <span class="stage stage-bofu">BoFu</span> <span class="stage stage-tm">ToFu+MoFu</span> <span class="stage stage-mix">MoFu+BoFu</span> <span class="stage stage-full">Full funnel</span>.</p>
-    </div>
-
-    <!-- 4.1 Dominio -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#01</span>Tax Brazil Dominio</h3>
-        <div class="stat"><strong>US$ 206K YTD</strong> · 90,5% BoFu hoje · alvo 60%</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Reels Meta · talking-head de contador</strong><span class="v">não vídeo polido</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>TikTok Spark Ads</strong><span class="v">teste US$ 15-20K anual</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>YouTube In-Stream</strong><span class="v">"Reforma Tributária p/ contador SMB" · hooks 15s</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Retargeting blog Dominio</strong><span class="v">visitantes orgânicos</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Demand Gen Google</strong><span class="v">lookalike de clientes Dominio</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Meta MoFu (Segurança_para_Crescer)</strong><span class="v">3× volume atual</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>PMax</strong><span class="v">US$ 9,5K → US$ 25-30K</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search NonBrand</strong><span class="v">otimizar para keywords mais comerciais</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Brand Search · capar no nível atual</strong><span class="v">saturado, aumentar daqui queima dinheiro</span></div>
-            <div class="channel-chip"><span class="stage stage-na">N/A</span><strong>LinkedIn · não ativar</strong><span class="v">audiência errada para contador SMB</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.2 Legal BR PRO -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#02</span>Legal Brazil PRO</h3>
-        <div class="stat"><strong>US$ 162K YTD</strong> · 5 produtos com lógicas diferentes</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>HighQ · LinkedIn ABM</strong><span class="v">200 escritórios 50+ advogados · US$ 30-40K</span></div>
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>CoCounsel · YouTube + LinkedIn TL Ads + Demand Gen</strong><span class="v">categoria nova, janela fechando</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Legal-One · LinkedIn Thought Leader</strong><span class="v">SMEs falando sobre Legal Ops</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Legal-One · Demand Gen Google MoFu</strong><span class="v">US$ 20K novos</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-full">Full</span><strong>Pronto-Pronto · dobrar top performers</strong><span class="v">mix multicanal já está certo</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>CoCounsel Search NonBrand</strong><span class="v">US$ 1,2K → US$ 16-24K (40% do BoFu)</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Legal-One · Search Brand + NonBrand</strong><span class="v">US$ 41K Brand já saturado</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>HighQ · Search defensivo</strong></div>
-            <div class="channel-chip"><span class="stage stage-full">Full</span><strong>Pronto-Pronto · estrutura atual</strong><span class="v">Google + LinkedIn + Meta + YouTube</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-full">Full</span><strong>Large · 7 ad sets sub-escala</strong><span class="v">consolidar para 3 com US$ 8-10K cada · ou pausar e reescrever briefing</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.3 Corp BR TAX -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#03</span>Corp Brazil TAX</h3>
-        <div class="stat"><strong>US$ 138K YTD</strong> · ONESOURCE + Reforma Tributária = evento de 2026</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>YouTube In-Stream + Demand Gen</strong><span class="v">3 séries · hooks 15s + payoff 3-5 min · US$ 30K</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>LinkedIn Thought Leader Ads</strong><span class="v">2-3 SMEs internos com POVs semanais · US$ 20K</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>LinkedIn Document Ads</strong><span class="v">"Playbook Reforma Tributária 2026" · US$ 15K</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Demand Gen Google</strong><span class="v">US$ 9K YTD → US$ 30K anualizado</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search NonBrand Reforma Tributária</strong><span class="v">unificar testes A/B e escalar para US$ 15K</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>CLC TAX Demand Gen</strong><span class="v">religar acelerador desligado em mai</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search Tax-One NonBrand</strong><span class="v">consolidar Skag + Multi_2 (duplicados)</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Tax-One Brand Search · capar</strong><span class="v">US$ 26,7K YTD em Brand · saturando</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Decidir DESCOMPLEXA × PESQUISA</strong><span class="v">US$ 8K em cada por 60 dias · decidir por SQL, não CPL</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.4 Bejerman -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#04</span>Tax Argentina ERP — Bejerman</h3>
-        <div class="stat"><strong>US$ 80K YTD</strong> · zero LinkedIn · desacelerando em maio</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>LinkedIn ABM Argentina</strong><span class="v">contadores mid-market + firmas 5+ contadores · US$ 15-20K</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Reels Meta · contador AR talking-head</strong></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>YouTube In-Stream AR</strong><span class="v">US$ 280 → US$ 10K explainer ERP</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Meta Always On ERP_BOFU</strong><span class="v">US$ 11K já roda bem · US$ 30K anualizado</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Demand Gen Google</strong><span class="v">US$ 2,9K · otimizar criativos</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Google Search Brand + NonBrand</strong><span class="v">nível atual · ~US$ 50K anualizado</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Interrogar a desaceleração de maio</strong><span class="v">NonBrand US$ 4,8K → US$ 1,8K · decisão consciente ou pause não documentado?</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.5 Corp BR GTM -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#05</span>Corp Brazil GTM</h3>
-        <div class="stat"><strong>US$ 65K YTD</strong> · ONESOURCE Global Trade · LinkedIn ABM começando</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>LinkedIn Document Ads</strong><span class="v">"Compliance fiscal internacional 2026"</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>LinkedIn Conversation Ads</strong><span class="v">"Calcule sua economia em 15 min"</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Thought Leader Ads</strong><span class="v">1-2 SMEs internos</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>LinkedIn ABM</strong><span class="v">~US$ 15K → US$ 35-45K · Top 1.500 exportadores</span></div>
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>Demand Gen Google (CLC + GTM)</strong><span class="v">US$ 25K anualizado · religar CLC</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Meta GTM</strong><span class="v">US$ 800 → US$ 8-10K com criativos de Global Trade</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Google Search Brand + NonBrand</strong><span class="v">US$ 38K YTD</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Bing defensivo</strong></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip empty">Nada a pausar — mix saudável</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.6 Corp BR Legal Corp -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#06</span>Corp Brazil Legal Corp</h3>
-        <div class="stat"><strong>US$ 61K YTD</strong> · Soluções Jurídicas · gap está no MoFu</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>LinkedIn Document Ads</strong><span class="v">"Guia de Operações Jurídicas Corp 2026" · US$ 15K</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>LinkedIn Conversation Ads</strong><span class="v">Demo Soluções Jurídicas · US$ 10K</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Demand Gen Google MoFu</strong><span class="v">vídeo com cases de cliente · US$ 8K</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>CLC LEGAL Demand Gen ToFu</strong><span class="v">US$ 9K YTD funciona · religar maio</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>LinkedIn LegalCorp MOF_Guia_Imagem</strong><span class="v">amplificar peça que já roda</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search NonBrand "Soluções Jurídicas"</strong><span class="v">nível atual</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip empty">Nada — gap é construir, não cortar</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.7 Onvio -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#07</span>Tax Argentina SaaS — Onvio</h3>
-        <div class="stat"><strong>US$ 56K YTD</strong> · Always On Meta = US$ 21,7K · auditar antes de tudo</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>LinkedIn AR</strong><span class="v">contadores certificados + firmas mid-market sem SaaS · US$ 10-15K</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Demand Gen Google AR</strong><span class="v">US$ 8K anualizado</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Google Search</strong><span class="v">interrogar queda mai · US$ 3K → US$ 923</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>Auditoria obrigatória · Always On Meta</strong><span class="v">US$ 21,7K sem revisão · validar pipeline antes de escalar</span></div>
-            <div class="channel-chip"><span class="stage stage-na">N/A</span><strong>Sem decisão, sem escala</strong><span class="v">resultado da auditoria define todo o resto</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.8 Legal AR -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#08</span>Legal Argentina</h3>
-        <div class="stat"><strong>US$ 47K YTD</strong> · Westlaw · La Ley · Legal-One · zero ToFu</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>LinkedIn Thought Leader Ads</strong><span class="v">SMEs La Ley/Westlaw AR sobre AI legal · US$ 10K</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Demand Gen Google AR</strong><span class="v">"AI no jurídico — estado da arte 2026" · US$ 8K</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>YouTube In-Stream AR</strong><span class="v">3-5 min com lawyer AR · casos de uso · US$ 6K</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Inteligencia Artificial Legal MoFu</strong><span class="v">US$ 1,5K em abril → US$ 12K anualizado</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search Brand + NonBrand + PMax</strong><span class="v">níveis atuais</span></div>
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>Meta Always On</strong><span class="v">La Ley + Legal One + AI Legal · US$ 15K YTD funciona</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip empty">Nada — gap é construção de categoria</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.9 Tax CL -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#09</span>Tax Chile</h3>
-        <div class="stat"><strong>US$ 26K YTD</strong> · Hyperrenta + Soluciones · 95,7% BoFu hoje</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>Demand Gen Google Chile</strong><span class="v">novo · US$ 5K anualizado</span></div>
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>LinkedIn Chile ABM</strong><span class="v">300 firmas contábeis + 500 corporates · US$ 10K</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Meta Hub Contenidos MoFu</strong><span class="v">US$ 800 YTD → US$ 6K · Hyperrenta + Soluciones</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search Hyperrenta + Soluciones</strong><span class="v">camada de captura existente</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip empty">Nada — mercado estruturalmente pobre, precisa construir</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.10 Institucional -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#10</span>Institucional</h3>
-        <div class="stat"><strong>US$ 16K YTD</strong> · parou em maio · reativar imediato</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>Reativar TUDO</strong><span class="v">linha foi a zero em mai · agir em junho</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Demand Gen ToFu</strong><span class="v">jan-fev rodava US$ 4K+/mês · restaurar</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>YouTube Video Brand</strong><span class="v">restaurar nível Q1</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>LinkedIn Brand Awareness</strong><span class="v">brand pressure cross-BU</span></div>
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>Volume total → US$ 50-70K anualizado</strong></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>Mix 60/40 ToFu/MoFu</strong><span class="v">nunca tocar BoFu — por design</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-na">N/A</span><strong>Revisar a decisão de pausa de maio</strong><span class="v">brand desligada hoje = Brand Search mais caro em 3-6 meses</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.11 Legal CL -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#11</span>Legal Chile</h3>
-        <div class="stat"><strong>US$ 15K YTD</strong> · 100% BoFu · CoCounsel CL começou em maio</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Construir "AI Legal Chile"</strong><span class="v">categoria · Demand Gen + LinkedIn Thought Leader</span></div>
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>LinkedIn CL · escritórios 30+ advogados</strong><span class="v">~150 contas</span></div>
-            <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>YouTube In-Stream CL</strong><span class="v">explainer Westlaw + CoCounsel</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>CoCounsel CL · de US$ 1,4K (mai) para US$ 15K anualizado</strong><span class="v">60% ToFu, janela competitiva</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Westlaw Search CL</strong><span class="v">camada de captura existente</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip empty">Nada — mercado precisa construir, não cortar</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.12 HighQ AR -->
-    <div class="channel-bu reveal">
-      <div class="channel-bu-head">
-        <h3><span class="rank">#12</span>Legal Argentina KA — HighQ</h3>
-        <div class="stat"><strong>US$ 1,5K YTD</strong> · sub-escala · ABM puro</div>
-      </div>
-      <div class="channel-grid">
-        <div class="channel-col col-ativar">
-          <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>LinkedIn ABM puro</strong><span class="v">80-100 escritórios AR 50+ advogados</span></div>
-            <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Document Ads</strong><span class="v">"Implementação de Legal Ops · escritórios AR 50+"</span></div>
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Conversation Ads</strong><span class="v">Demo HighQ</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-escalar">
-          <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>De US$ 1,5K para US$ 10-12K anualizado</strong><span class="v">sub-escala atual não é mensurável</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-manter">
-          <div class="channel-col-head"><span class="badge">=</span>Manter</div>
-          <div class="channel-chips">
-            <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search defensivo</strong><span class="v">pequeno, só para queries de marca</span></div>
-          </div>
-        </div>
-        <div class="channel-col col-pausar">
-          <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
-          <div class="channel-chips">
-            <div class="channel-chip empty">Nada — ABM é o trabalho inteiro</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ====================== 5. CROSS-CUTTING ====================== -->
-<section id="cruzados" class="cross-section">
+<!-- ====================== 3. FUNIL LATAM AGREGADO ====================== -->
+<section id="funil-latam">
   <div class="page">
     <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="num">5</span>Movimentos estruturais cruzados</div>
-      <h2 class="section-title">O que <em>corta horizontalmente</em> todos os BUs.</h2>
-      <p class="section-lede">Decisões centrais que destravam o resto. Não dá pra escalar canal AI-managed sem essas peças no lugar.</p>
+      <div class="section-eyebrow"><span class="num">3</span>Funil agregado LatAm</div>
+      <h2 class="section-title">Mix de funil <em>hoje vs. recomendado.</em></h2>
+      <p class="section-lede">
+        Visão portfolio-wide ponderada pelo gasto de cada BU. O ajuste recomendado <strong>não reduz BoFu em absoluto</strong> (BoFu continua sendo o maior bolo) — adiciona camadas de ToFu e MoFu para sustentar o motor de captura nos próximos 12-24 meses. Os termos ToFu/MoFu/BoFu estão definidos no <a href="glossary.html" style="text-decoration: underline; color: var(--tr-orange);">glossário</a>.
+      </p>
+    </div>
+
+    <div class="funnel-compare reveal">
+      <div class="funnel-side now">
+        <h4>Onde está hoje · LatAm portfolio</h4>
+        <div class="funnel-bar">
+          <div class="funnel-seg funnel-tofu" style="width: 5%;">5%</div>
+          <div class="funnel-seg funnel-mofu" style="width: 12%;">12%</div>
+          <div class="funnel-seg funnel-bofu" style="width: 83%;">83%</div>
+        </div>
+        <div class="funnel-legend">
+          <span>ToFu · construção de demanda</span>
+          <span>MoFu · consideração</span>
+          <span>BoFu · captura</span>
+        </div>
+      </div>
+      <div class="funnel-arrow" aria-hidden="true">→</div>
+      <div class="funnel-side target">
+        <h4>Para onde mover · 12-18 meses</h4>
+        <div class="funnel-bar">
+          <div class="funnel-seg funnel-tofu" style="width: 17%;">17%</div>
+          <div class="funnel-seg funnel-mofu" style="width: 23%;">23%</div>
+          <div class="funnel-seg funnel-bofu" style="width: 60%;">60%</div>
+        </div>
+        <div class="funnel-legend">
+          <span>ToFu</span>
+          <span>MoFu</span>
+          <span>BoFu</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-lede reveal" style="margin-top: 24px; font-size: 15px;">
+      Em valor absoluto, o BoFu cresce (vamos investir mais no total). A mudança é no <strong>peso relativo</strong> — para que o motor de captura continue eficiente, é preciso alimentá-lo. Cada BU tem um mix recomendado próprio na sua página de detalhe.
+    </p>
+  </div>
+</section>
+
+<!-- ====================== 4. CANAIS LATAM AGREGADO ====================== -->
+<section id="canais-latam" class="section--gray">
+  <div class="page">
+    <div class="section-head reveal">
+      <div class="section-eyebrow"><span class="num">4</span>Canais agregados · LatAm</div>
+      <h2 class="section-title">O que ativar, escalar, manter <em>e pausar</em> no portfólio.</h2>
+      <p class="section-lede">
+        Visão consolidada por estágio de funil. Cada BU tem sua própria matriz com nomes de campanha,
+        valores e contexto na <a href="#distribuicao" style="text-decoration: underline; color: var(--tr-orange);">página da BU</a>.
+        Tags ToFu/MoFu/BoFu identificam a etapa que cada movimento ataca.
+        Itens com <strong style="color: var(--tr-orange);">*</strong> têm restrições internas de TR — ver notas abaixo.
+      </p>
+    </div>
+
+    <div class="channel-grid">
+      <div class="channel-col col-ativar reveal">
+        <div class="channel-col-head"><span class="badge">+</span>Ativar</div>
+        <div class="channel-chips">
+          <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>LinkedIn ABM enterprise</strong><span class="v">Corp BR GTM/TAX/Legal · HighQ BR/AR · CoCounsel · Bejerman · Onvio</span></div>
+          <div class="channel-chip"><span class="stage stage-tm">ToFu+MoFu</span><strong>Hub Reforma Tributária</strong><span class="v">YouTube + Demand Gen + Thought Leader · transversal Corp TAX + Institucional</span></div>
+          <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Construção AI Legal · AR + CL</strong><span class="v">Demand Gen + LinkedIn Thought Leader · janela antes de Harvey/Spellbook</span></div>
+          <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>Reels Meta talking-head</strong><span class="v">Dominio (contador SMB) + Bejerman (contador AR)</span></div>
+          <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>TikTok Spark Ads<sup style="color: var(--tr-orange);">*</sup></strong><span class="v">Teste US$ 15-20K p/ Dominio · dependente de release interno</span></div>
+        </div>
+      </div>
+
+      <div class="channel-col col-escalar reveal reveal-delay-1">
+        <div class="channel-col-head"><span class="badge">↗</span>Escalar</div>
+        <div class="channel-chips">
+          <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Demand Gen Google · 6 BUs</strong><span class="v">Dominio, Corp TAX, Corp GTM, Corp Legal, Onvio, Tax CL</span></div>
+          <div class="channel-chip"><span class="stage stage-tofu">ToFu</span><strong>CLC Demand Gen cross-BU</strong><span class="v">Religar acelerador desligado em mai · GTM + TAX + LEGAL</span></div>
+          <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>Meta Always On Onvio</strong><span class="v">Apenas após auditoria de pipeline (ver padrão #12)</span></div>
+          <div class="channel-chip"><span class="stage stage-full">Full</span><strong>Pronto-Pronto · top performers</strong><span class="v">Dobrar nos ad sets que já performam · estrutura completa funciona</span></div>
+          <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>PMax Dominio</strong><span class="v">US$ 9,5K YTD → US$ 25-30K anualizado</span></div>
+        </div>
+      </div>
+
+      <div class="channel-col col-manter reveal reveal-delay-2">
+        <div class="channel-col-head"><span class="badge">=</span>Manter</div>
+        <div class="channel-chips">
+          <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search NonBrand · BUs no nível certo</strong><span class="v">Dominio, Corp GTM, Bejerman, Legal AR</span></div>
+          <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Search Brand · BUs ainda saudáveis</strong><span class="v">Onvio, Legal AR, Tax CL, Legal CL</span></div>
+          <div class="channel-chip"><span class="stage stage-full">Full</span><strong>Pronto-Pronto · estrutura atual</strong><span class="v">Não mexer no que funciona — usar como template</span></div>
+          <div class="channel-chip"><span class="stage stage-mix">MoFu+BoFu</span><strong>Meta Always On · Legal AR</strong><span class="v">US$ 15K YTD com sinal positivo</span></div>
+        </div>
+      </div>
+
+      <div class="channel-col col-pausar reveal reveal-delay-3">
+        <div class="channel-col-head"><span class="badge">−</span>Pausar / capar</div>
+        <div class="channel-chips">
+          <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Capar Brand Search saturado</strong><span class="v">Dominio, Legal-One, ONESOURCE Tax-One · ~US$ 80-100K de eficiência</span></div>
+          <div class="channel-chip"><span class="stage stage-full">Full</span><strong>Decidir Large · pausar ou consolidar</strong><span class="v">7 ad sets sub-escala · não é diagnosticável no volume atual</span></div>
+          <div class="channel-chip"><span class="stage stage-mofu">MoFu</span><strong>Resolver DESCOMPLEXA × PESQUISA</strong><span class="v">Duas estratégias paralelas para o mesmo evento (Reforma Tributária)</span></div>
+          <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Limpar 15 campanhas pingadas</strong><span class="v">Gasto &lt;US$ 200 YTD · fragmenta learning de AI campaigns</span></div>
+          <div class="channel-chip"><span class="stage stage-bofu">BoFu</span><strong>Consolidar duplicações</strong><span class="v">Linha duplicada Corp BR TAX + 4 ad sets LinkedIn quase idênticos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footnotes reveal">
+      <h4>Notas · restrições internas TR</h4>
+      <p><span class="star">*</span><strong>TikTok</strong> — Acesso e uso atualmente restritos por política interna TR. Recomendação prática: agendar conversa com a Amy (Brand/Legal) antes de qualquer roadmap formal de teste. A oportunidade existe (audiência de contador SMB tem alta presença lá), mas o gating é fora do nosso time.</p>
+      <p><span class="star">*</span><strong>X (Twitter)</strong> — Plataforma com aprovação requerida caso a caso pelo time de Brand. Não inclui na recomendação atual por essa razão — vale revisitar se houver janela.</p>
+      <p><span class="star">*</span><strong>Reddit</strong> — Restrição similar (moderação e contexto da plataforma). Ficou de fora do roadmap mas pode ser reaberto em conversa com Brand/Legal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 5. PRÓXIMOS PASSOS ====================== -->
+<section id="proximos-passos">
+  <div class="page">
+    <div class="section-head reveal">
+      <div class="section-eyebrow"><span class="num">5</span>Próximos passos</div>
+      <h2 class="section-title">Onde aprofundar <em>a partir daqui.</em></h2>
+      <p class="section-lede">Cada BU tem uma página própria com diagnóstico, mix de funil e matriz de canais detalhada. As páginas de Budget, Plano 90 dias e Glossário estão no menu superior.</p>
     </div>
 
     <div class="cross-grid">
-      <div class="cross-card reveal">
-        <div class="num-large">01</div>
-        <h3>Sinal de conversão — pré-requisito</h3>
-        <p>CAPI / Enhanced Conversions / LinkedIn CAPI com SQL como evento primário. Valor de deal server-side. Self-reported attribution. Lead-quality feedback loop. <strong>Sem isso, escalar = trazer lixo</strong>.</p>
-      </div>
-      <div class="cross-card reveal reveal-delay-1">
-        <div class="num-large">02</div>
-        <h3>ABM por BU — lista mestra</h3>
-        <p>Construir e manter centralizadamente. ~13K contas no total. Atualização trimestral. CRM integrado com LinkedIn Sales Navigator.</p>
-      </div>
-      <div class="cross-card reveal reveal-delay-2">
-        <div class="num-large">03</div>
-        <h3>Hub Reforma Tributária</h3>
-        <p>Programa transversal entre Corp BR TAX e Institucional. Landing-hub + 6 Document Ads por persona + 12 vídeos YouTube + Thought Leader Ads. <strong>US$ 100-130K anualizado</strong>.</p>
-      </div>
-      <div class="cross-card reveal">
-        <div class="num-large">04</div>
-        <h3>Modelo Pronto-Pronto replicável</h3>
-        <p>Documentar a estrutura ToFu/MoFu/BoFu multicanal e replicar em Legal-One, Onvio e Bejerman. Único produto hoje com mix completo.</p>
-      </div>
-      <div class="cross-card reveal reveal-delay-1">
-        <div class="num-large">05</div>
-        <h3>Kill list e consolidação</h3>
-        <p>15 campanhas pingadas &lt;US$ 200. Linha duplicada em maio Corp BR TAX. 4 ad sets LinkedIn quase idênticos. 2 testes Reforma Tributária Search A/B sem decisão. Consolidar.</p>
-      </div>
-      <div class="cross-card reveal reveal-delay-2">
-        <div class="num-large">06</div>
-        <h3>Lançamentos sub-escala em maio</h3>
-        <p>CoCounsel + Large lançados com &lt;US$ 3K cada. Decisão: consolidar e escalar CoCounsel (janela fechando), <strong>pausar Large</strong> e reescrever briefing.</p>
-      </div>
-    </div>
-
-    <!-- ABM Table -->
-    <div class="abm-table reveal">
-      <table>
-        <thead>
-          <tr><th>Business Unit</th><th style="text-align:left;">Lista ABM</th><th>Tamanho (contas)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><span class="abm-tag corp">Corp BR GTM</span></td><td style="text-align:left;">Top exportadores e multinacionais BR (ONESOURCE Global Trade)</td><td>1.500</td></tr>
-          <tr><td><span class="abm-tag corp">Corp BR TAX</span></td><td style="text-align:left;">Grandes contribuintes BR (ONESOURCE Tax-One)</td><td>2.000</td></tr>
-          <tr><td><span class="abm-tag corp">Corp BR Legal</span></td><td style="text-align:left;">Jurídicos in-house BR</td><td>1.000</td></tr>
-          <tr><td><span class="abm-tag legal">Legal BR HighQ</span></td><td style="text-align:left;">Escritórios 50+ advogados</td><td>200</td></tr>
-          <tr><td><span class="abm-tag legal">Legal BR Large</span></td><td style="text-align:left;">Escritórios 200+ advogados</td><td>100</td></tr>
-          <tr><td><span class="abm-tag legal">Legal BR CoCounsel</span></td><td style="text-align:left;">Escritórios + departamento legal corp</td><td>500</td></tr>
-          <tr><td><span class="abm-tag tax">Tax AR Bejerman</span></td><td style="text-align:left;">Firmas contábeis AR mid-market</td><td>5.000</td></tr>
-          <tr><td><span class="abm-tag tax">Tax AR Onvio</span></td><td style="text-align:left;">Contadores certificados AR</td><td>2.000</td></tr>
-          <tr><td><span class="abm-tag legal">Legal AR HighQ</span></td><td style="text-align:left;">Escritórios AR 50+ advogados</td><td>80</td></tr>
-          <tr><td><span class="abm-tag tax">Tax CL</span></td><td style="text-align:left;">Firmas contábeis CL</td><td>500</td></tr>
-          <tr><td><span class="abm-tag legal">Legal CL</span></td><td style="text-align:left;">Escritórios CL 30+ advogados</td><td>150</td></tr>
-          <tr class="abm-total"><td colspan="2">Total — base ABM consolidada</td><td>~13.030</td></tr>
-        </tbody>
-      </table>
+      <a class="cross-card" href="bus/dominio.html" style="text-decoration: none;">
+        <div class="num-large">12</div>
+        <h3>Páginas de business unit</h3>
+        <p class="what">Diagnóstico, recomendação de funil e matriz de canais para cada BU — do maior (Dominio) ao menor (HighQ AR). Tags ToFu/MoFu/BoFu em cada movimento.</p>
+        <p class="why">Use o seletor <strong>Explorar BUs</strong> no topo para navegar entre eles.</p>
+      </a>
+      <a class="cross-card" href="budget.html" style="text-decoration: none;">
+        <div class="num-large">$</div>
+        <h3>Budget detalhado</h3>
+        <p class="what">Gasto YTD por BU, projeção anual no ritmo atual, plano anual recomendado e delta. Nomenclatura explícita para evitar confusão de leitura.</p>
+        <p class="why">Total YTD US$ 875,7K · Plano anual recomendado ~US$ 2,47M · Incremento líquido ~US$ 270K.</p>
+      </a>
+      <a class="cross-card" href="timeline.html" style="text-decoration: none;">
+        <div class="num-large">90</div>
+        <h3>Plano de 90 dias</h3>
+        <p class="what">Junho · Julho · Agosto. Cada ação com owner sugerido, dependências e principais travas a destravar antes de executar.</p>
+        <p class="why">Sequência importa — sinal de conversão (CAPI / Enhanced Conversions) precede qualquer escala de LinkedIn ou AI campaign.</p>
+      </a>
+      <a class="cross-card" href="glossary.html" style="text-decoration: none;">
+        <div class="num-large">A·Z</div>
+        <h3>Glossário</h3>
+        <p class="what">Definição rápida dos termos técnicos usados nesta análise: ABM, ToFu/MoFu/BoFu, CAPI, Demand Gen, PMax, Thought Leader Ads, Document Ads, value-based bidding, e outros.</p>
+        <p class="why">Para o time todo se entender — especialistas júnior incluídos.</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ====================== 6. PLANO 90 DIAS ====================== -->
-<section id="90dias" class="timeline-section">
-  <div class="page">
-    <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="num">6</span>Plano de 90 dias</div>
-      <h2 class="section-title">Junho · Julho · Agosto. <em>Fundamentos primeiro.</em></h2>
-      <p class="section-lede">Sequência importa. LinkedIn não escala antes do sinal de conversão estar pronto. Antes de CAPI + offline conversion import, segura.</p>
-    </div>
+</main>
 
-    <div class="timeline">
-      <div class="timeline-progress" id="tlProgress"></div>
+<footer class="footer-section" id="site-footer"></footer>
 
-      <div class="tl-month" id="m1">
-        <h3>Mês 1 — Junho <span class="week">Fundamentos + realocação Tier 1</span></h3>
-        <div class="tl-sub">Semana 1–2 · Sinal de conversão e listas</div>
-        <div class="tl-list">
-          <div class="tl-item"><span class="tick"></span><div>Implementar CAPI / Enhanced Conversions / LinkedIn CAPI com evento de SQL</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Implementar valor de deal server-side para value-based bidding</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Subir self-reported attribution em todos os formulários</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Construir listas ABM dos Top 3 BUs (Dominio, Legal PRO, Corp TAX)</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Auditar Always On Onvio Meta · validar pipeline vs. impressão</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Decidir DESCOMPLEXA vs PESQUISA na Reforma Tributária</div></div>
-        </div>
-        <div class="tl-sub" style="margin-top:24px;">Semana 3–4 · Reativações e LinkedIn ABM</div>
-        <div class="tl-list">
-          <div class="tl-item"><span class="tick"></span><div>Reativar Institucional · US$ 5-7K em junho</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Quadruplicar LinkedIn em Corp BR GTM · Document + Conv + TL Ads</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Consolidar campanhas pingadas + executar kill list</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Setar tracking diferenciado nas duas estratégias de Reforma Tributária</div></div>
-        </div>
-      </div>
-
-      <div class="tl-month" id="m2">
-        <h3>Mês 2 — Julho <span class="week">Rollout LinkedIn Tier 2 + Hub Reforma</span></h3>
-        <div class="tl-sub">Construção da camada de demand-gen</div>
-        <div class="tl-list">
-          <div class="tl-item"><span class="tick"></span><div>LinkedIn ABM Corp BR TAX, Corp BR Legal Corp, Legal BR HighQ</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Construir Hub Reforma Tributária · landing + Document Ads + série YouTube</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Lançar CoCounsel escala 1 · US$ 8-10K em julho</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Pausar / reescrever briefing do Large</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Adicionar LinkedIn AR para Bejerman + Onvio</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Construir categoria "AI Legal AR" · Demand Gen + Thought Leader</div></div>
-        </div>
-      </div>
-
-      <div class="tl-month" id="m3">
-        <h3>Mês 3 — Agosto <span class="week">Escala + Hispanic ToFu</span></h3>
-        <div class="tl-sub">Camada de ToFu nos mercados desestruturados</div>
-        <div class="tl-list">
-          <div class="tl-item"><span class="tick"></span><div>Adicionar Demand Gen Chile · Tax + Legal</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Reels Meta para Dominio com talking-head</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Teste TikTok Spark Ads para Dominio · US$ 7K</div></div>
-          <div class="tl-item"><span class="tick"></span><div>LinkedIn Chile · Tax + Legal · construir categoria local</div></div>
-          <div class="tl-item"><span class="tick"></span><div>YouTube In-Stream para Bejerman + Onvio AR</div></div>
-          <div class="tl-item"><span class="tick"></span><div>Primeira leitura de impacto MQL→SQL · 60 dias após sinal de conversão correto</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="expectations reveal">
-      <h3>O que esperar até final do trimestre</h3>
-      <div class="exp-grid">
-        <div class="exp-item">
-          <div class="v"><span class="pos">+30–55<small style="font-size:18px;">%</small></span></div>
-          <div class="l">Volume de MQL · 90 dias<br/>(lift maior em jul-ago)</div>
-        </div>
-        <div class="exp-item">
-          <div class="v"><span class="pos">+5–10<small style="font-size:18px;">%</small></span></div>
-          <div class="l">Taxa MQL → SQL<br/>(efeito sinal correto)</div>
-        </div>
-        <div class="exp-item">
-          <div class="v">+10–20<small style="font-size:18px;">%</small></div>
-          <div class="l">CPL blended · 45 dias<br/>(LinkedIn entra, depois estabiliza)</div>
-        </div>
-        <div class="exp-item">
-          <div class="v"><span class="pos">+25–40<small style="font-size:18px;">%</small></span></div>
-          <div class="l">Cobertura de pipeline<br/>Q4 2026</div>
-        </div>
-      </div>
-
-      <div class="risk-note">
-        <span>Risco principal</span>
-        <p><strong>Escalar LinkedIn antes do sinal de conversão estar pronto.</strong> Não fazer isso. Antes de CAPI + offline conversion import, segura.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== 7. BUDGET ====================== -->
-<section id="budget" class="budget-section">
-  <div class="page">
-    <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="num">7</span>Budget shift consolidado</div>
-      <h2 class="section-title">Onde está hoje, onde <em>deveria estar.</em></h2>
-      <p class="section-lede">Run-rate atual estimado por extrapolação YTD × 2,4. Recomendado anualizado por BU baseado nos movimentos propostos.</p>
-    </div>
-
-    <div class="budget-table reveal">
-      <table>
-        <thead>
-          <tr>
-            <th style="text-align:left;">Business unit</th>
-            <th>YTD (Jan–Mai)</th>
-            <th>Run-rate atual</th>
-            <th>Recomendado anual</th>
-            <th>Mudança</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Tax BR Dominio</td><td>$206K</td><td>~$495K</td><td>$495K</td><td class="delta-neutral">manter total · realocar funil</td></tr>
-          <tr><td>Legal BR PRO</td><td>$162K</td><td>~$390K</td><td>$450K</td><td class="delta-pos">+$60K · CoCounsel + HighQ</td></tr>
-          <tr><td>Corp BR TAX</td><td>$138K</td><td>~$330K</td><td>$430K</td><td class="delta-pos">+$100K · Reforma Tributária</td></tr>
-          <tr><td>Tax AR Bejerman</td><td>$80K</td><td>~$190K</td><td>$215K</td><td class="delta-pos">+$25K · LinkedIn novo</td></tr>
-          <tr><td>Corp BR GTM</td><td>$65K</td><td>~$155K</td><td>$200K</td><td class="delta-pos">+$45K · LinkedIn ABM</td></tr>
-          <tr><td>Corp BR Legal Corp</td><td>$61K</td><td>~$145K</td><td>$175K</td><td class="delta-pos">+$30K · LinkedIn + Demand Gen</td></tr>
-          <tr><td>Tax AR Onvio</td><td>$56K</td><td>~$135K</td><td>$155K</td><td class="delta-pos">+$20K · LinkedIn</td></tr>
-          <tr><td>Legal AR</td><td>$47K</td><td>~$115K</td><td>$140K</td><td class="delta-pos">+$25K · AI Legal Hub</td></tr>
-          <tr><td>Tax CL</td><td>$26K</td><td>~$62K</td><td>$80K</td><td class="delta-pos">+$18K · Demand Gen + LinkedIn</td></tr>
-          <tr><td>Institucional</td><td>$16K</td><td>~$38K</td><td>$60K</td><td class="delta-pos">+$22K · reativar</td></tr>
-          <tr><td>Legal CL</td><td>$15K</td><td>~$36K</td><td>$55K</td><td class="delta-pos">+$19K · AI Legal Hub CL</td></tr>
-          <tr><td>Legal AR HighQ KA</td><td>$1,5K</td><td>~$3,5K</td><td>$12K</td><td class="delta-pos">+$8,5K · ABM</td></tr>
-          <tr><td>BR RH</td><td>$1K</td><td>~$2,5K</td><td>$2,5K</td><td class="delta-neutral">manter</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td>Total</td><td>$876K</td><td>~$2,10M</td><td>~$2,47M</td><td>+$372K anualizado</td></tr>
-        </tfoot>
-      </table>
-    </div>
-
-    <div class="budget-foot-note">
-      O incremento de US$ 372K anualizado vem em parte de <strong>eficiência</strong> — redução de Brand Search saturado em Tax BR Dominio, Legal-One e ONESOURCE Tax-One vale ~US$ 80-100K anualizado — e em parte de <strong>incremento líquido</strong> (~US$ 270K). O ROI esperado vem da expansão de pipeline pelos novos canais (LinkedIn ABM + ToFu Hispanic).
-    </div>
-  </div>
-</section>
-
-<!-- ====================== FOOTER ====================== -->
-<footer class="footer-section">
-  <div class="page">
-    <div>
-      <h3>Análise consolidada · Paid Media LatAm 2026 YTD</h3>
-      <p>Baseada no breakdown oficial de campanhas (Jan 1 – 25 Mai 2026). Total YTD: US$ 875,7K. Total maio: US$ 138,7K. Classificação ToFu/MoFu/BoFu por BU conforme oficial do time, não heurística.</p>
-    </div>
-    <img src="assets/logo/tr_pri_logo_rgb_white.svg" alt="Thomson Reuters" />
-  </div>
-</footer>
-
-<!-- ====================== JS ====================== -->
-<script>
-  // Scroll progress bar
-  const progress = document.getElementById('progress');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-    progress.style.width = pct + '%';
-  }, { passive: true });
-
-  // Reveal on scroll
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  // BU bar chart fill on scroll
-  const buObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-active');
-        buObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.bu-row').forEach(el => buObserver.observe(el));
-
-  // Plan card funnel animation
-  const planObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        planObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.25 });
-  document.querySelectorAll('.plan-card').forEach(el => planObserver.observe(el));
-
-  // Timeline month reveal + progress
-  const tlMonths = document.querySelectorAll('.tl-month');
-  const tlProgress = document.getElementById('tlProgress');
-  const tlObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        // compute progress as fraction of months visible
-        const visible = document.querySelectorAll('.tl-month.is-visible').length;
-        const pct = (visible / tlMonths.length) * 100;
-        tlProgress.style.height = pct + '%';
-      }
-    });
-  }, { threshold: 0.3 });
-  tlMonths.forEach(el => tlObserver.observe(el));
-
-  // Count-up animation
-  function animateCount(el) {
-    const target = parseFloat(el.dataset.target);
-    const decimals = parseInt(el.dataset.decimals || '0', 10);
-    const duration = 1500;
-    const start = performance.now();
-    function frame(t) {
-      const p = Math.min((t - start) / duration, 1);
-      // easeOutCubic
-      const eased = 1 - Math.pow(1 - p, 3);
-      const value = target * eased;
-      el.textContent = value.toFixed(decimals).replace('.', ',');
-      if (p < 1) requestAnimationFrame(frame);
-      else el.textContent = target.toFixed(decimals).replace('.', ',');
-    }
-    requestAnimationFrame(frame);
-  }
-  const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        animateCount(e.target);
-        countObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  document.querySelectorAll('.countup').forEach(el => countObserver.observe(el));
-
-  // Smooth-scroll already handled by CSS scroll-behavior; nav links work directly
-</script>
-
+<script src="assets/site.js"></script>
 </body>
 </html>
