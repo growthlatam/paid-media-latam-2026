@@ -21,11 +21,12 @@
   ];
 
   const isBuPage = window.location.pathname.indexOf('/bus/') !== -1;
-  const ASSETS   = isBuPage ? '../assets'         : 'assets';
-  const HOME     = isBuPage ? '../index.html'     : 'index.html';
-  const BUDGET   = isBuPage ? '../budget.html'    : 'budget.html';
-  const TIMELINE = isBuPage ? '../timeline.html'  : 'timeline.html';
-  const GLOSSARY = isBuPage ? '../glossary.html'  : 'glossary.html';
+  const ASSETS      = isBuPage ? '../assets'           : 'assets';
+  const HOME        = isBuPage ? '../index.html'       : 'index.html';
+  const DIAGNOSTICO = isBuPage ? '../diagnostico.html' : 'diagnostico.html';
+  const BUDGET      = isBuPage ? '../budget.html'      : 'budget.html';
+  const TIMELINE    = isBuPage ? '../timeline.html'    : 'timeline.html';
+  const GLOSSARY    = isBuPage ? '../glossary.html'    : 'glossary.html';
   const BU_PREFIX = isBuPage ? '' : 'bus/';
 
   const currentPage = document.body.getAttribute('data-page') || '';
@@ -62,10 +63,11 @@
         h('span', { class: 'crumb' }, [ h('strong', { text: 'Paid Media LatAm 2026' }) ])
       ]),
       h('nav', null, [
-        h('a', { href: HOME,     class: currentPage === 'home'     ? 'active' : '', text: 'Resumo'     }),
-        h('a', { href: BUDGET,   class: currentPage === 'budget'   ? 'active' : '', text: 'Budget'     }),
-        h('a', { href: TIMELINE, class: currentPage === 'timeline' ? 'active' : '', text: '90 dias'    }),
-        h('a', { href: GLOSSARY, class: currentPage === 'glossary' ? 'active' : '', text: 'Glossário'  }),
+        h('a', { href: HOME,        class: currentPage === 'home'        ? 'active' : '', text: 'Resumo'      }),
+        h('a', { href: DIAGNOSTICO, class: currentPage === 'diagnostico' ? 'active' : '', text: 'Diagnóstico' }),
+        h('a', { href: BUDGET,      class: currentPage === 'budget'      ? 'active' : '', text: 'Budget'      }),
+        h('a', { href: TIMELINE,    class: currentPage === 'timeline'    ? 'active' : '', text: '90 dias'     }),
+        h('a', { href: GLOSSARY,    class: currentPage === 'glossary'    ? 'active' : '', text: 'Glossário'   }),
         buildBuPicker()
       ])
     ]);
@@ -118,10 +120,11 @@
         h('h3', { text: 'Paid Media LatAm 2026 YTD · Diagnóstico e plano' }),
         h('p', { text: text }),
         h('div', { class: 'footer-links' }, [
-          h('a', { href: HOME,     text: 'Resumo executivo' }),
-          h('a', { href: BUDGET,   text: 'Budget'           }),
-          h('a', { href: TIMELINE, text: 'Plano 90 dias'    }),
-          h('a', { href: GLOSSARY, text: 'Glossário'        })
+          h('a', { href: HOME,        text: 'Resumo executivo' }),
+          h('a', { href: DIAGNOSTICO, text: 'Diagnóstico'      }),
+          h('a', { href: BUDGET,      text: 'Budget'           }),
+          h('a', { href: TIMELINE,    text: 'Plano 90 dias'    }),
+          h('a', { href: GLOSSARY,    text: 'Glossário'        })
         ])
       ]),
       h('img', { src: ASSETS + '/logo/tr_pri_logo_rgb_white.svg', alt: 'Thomson Reuters' })
